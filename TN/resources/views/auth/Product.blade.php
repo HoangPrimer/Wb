@@ -1,5 +1,5 @@
 
-@extends('welcome')
+@extends('layouts.layoutwb')
 
 @section('content')
 <form action="{{ route('product')}}" method="post">

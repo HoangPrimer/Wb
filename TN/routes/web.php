@@ -13,13 +13,10 @@
 
 
 
-;
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('index');
+Route::get('/','PageController@getIndex' )->name('index');
 
 Auth::routes();
 

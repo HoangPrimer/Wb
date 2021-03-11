@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <link href="../css/index.css" rel="stylesheet" type="text/css"/>
+  <link href="../css/page.css" rel="stylesheet" type="text/css"/>
+  <link href="../css/product.css" rel="stylesheet" type="text/css"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=vivaldi">
   <title>Website - SecondHannd</title>
 </head>
@@ -16,7 +18,7 @@
                  <?php if(Route::has('login')): ?>
                 <div class="tab-user">
                     <?php if(auth()->guard()->check()): ?>
-                        <a href="<?php echo e(url('/home')); ?>"><i class="fas fa-user"></i> Profile</a>
+                        <a href="<?php echo e(url('/profile')); ?>"><i class="fas fa-user"></i> Profile</a>
                       
                     <?php else: ?>
                         <a href="<?php echo e(route('login')); ?>">Login</a>
@@ -47,9 +49,9 @@
             </div>
           </div>
      </div>
-     <div class="main">
+     
      <?php echo $__env->yieldContent('content'); ?>
-     </div>
+    
      <div class="footer">
        <h1> Hashaghi By Yasuo</h1>
      </div>

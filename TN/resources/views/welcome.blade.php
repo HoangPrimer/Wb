@@ -1,6 +1,7 @@
 @extends('layouts.layoutwb')
 
 @section('content')
+    <div class="main">
   <div class="directory">
       <div class="row">
           <div class="colums">
@@ -9,7 +10,7 @@
               </div>
               <div class="nd">
                <h4> Đồ điện tử</h4>
-              @foreach($a as $al)
+              @foreach($dodientu as $al)
                 <p>{{$al->name_directory}} </p>
              @endforeach
               </div>
@@ -20,7 +21,7 @@
               </div>
               <div class="nd">
               <h4> Thiết bị, nghe nhìn</h4>
-              @foreach($b as $al)
+              @foreach($nghenhin as $al)
                 <p>{{$al->name_directory}} </p>
              @endforeach
               </div>
@@ -31,7 +32,7 @@
               </div>
               <div class="nd">
               <h4> Đồ gia dụng</h4>
-              @foreach($c as $al)
+              @foreach($dogiadung as $al)
                 <p>{{$al->name_directory}} </p>
              @endforeach
               </div>
@@ -42,7 +43,7 @@
               </div>
               <div class="nd">
               <h4> Xe cộ</h4>
-              @foreach($d as $al)
+              @foreach($xeco as $al)
                 <p>{{$al->name_directory}} </p>
              @endforeach
               </div>
@@ -53,7 +54,7 @@
               </div>
               <div class="nd">
               <h4> Thời trang, Phụ kiện</h4>
-              @foreach($f as $al)
+              @foreach($thoitrang as $al)
                 <p>{{$al->name_directory}} </p>
              @endforeach
               </div>
@@ -68,7 +69,7 @@
               </div>
               <div class="nd">
               <h4> Nội, Ngoại thất</h4>
-              @foreach($q as $al)
+              @foreach($noithat as $al)
                 <p>{{$al->name_directory}} </p>
              @endforeach
               </div>
@@ -78,7 +79,7 @@
               <img src="../images/cat-74.jpg"></div>
               <div class="nd">
               <h4> Vật nuôi, Cây cảnh</h4>
-              @foreach($w as $al)
+              @foreach($vatnuoi as $al)
                 <p>{{$al->name_directory}} </p>
              @endforeach
               </div>
@@ -89,7 +90,7 @@
               </div>
               <div class="nd">
               <h4> Thể thao</h4>
-              @foreach($e as $al)
+              @foreach($thethao as $al)
                 <p>{{$al->name_directory}} </p>
              @endforeach
               </div>
@@ -100,7 +101,7 @@
               </div>
               <div class="nd">
               <h4> Sách báo, Nghệ thuật</h4>
-              @foreach($r as $al)
+              @foreach($sach as $al)
                 <p>{{$al->name_directory}} </p>
              @endforeach
               </div>
@@ -111,7 +112,7 @@
               </div>
               <div class="nd">
               <h4> Máy móc chuyên dụng</h4>
-              @foreach($t as $al)
+              @foreach($may as $al)
                 <p>{{$al->name_directory}} </p>
              @endforeach
               </div>
@@ -119,4 +120,6 @@
 
       </div>
   </div>
+  <div class="producttt"></div>
+    </div>
 @endsection

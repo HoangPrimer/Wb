@@ -13,9 +13,6 @@
 
 
 
-
-
-
 Route::get('/','PageController@getIndex' )->name('index');
 
 Auth::routes();
@@ -24,11 +21,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 //them danhmuc
-Route::get('/create', 'DirectoryController@create')->name('create');
+Route::get('directory/create', 'DirectoryController@create')->name('dcreate');
 
-Route::post('/store', 'DirectoryController@store')->name('store');
+Route::post('directory/store', 'DirectoryController@store')->name('dstore');
 
 //product
 
-Route::get('/product/create', 'ProductController@create');
-Route::post('product/store', 'ProductController@store')->name('product');
+Route::get('product/create', 'ProductController@create')->name('pcreate');
+Route::post('product/store', 'ProductController@store')->name('pstore');
+//profile
+
+Route::get('profile','ProfileController@create')->name('profile');

@@ -1,4 +1,5 @@
 <?php $__env->startSection('content'); ?>
+<div class="nav">
 <form action="<?php echo e(route('product')); ?>" method="post">
         <?php echo csrf_field(); ?>
         <label for="tensanphamc">Tên sản phẩm</label><br>
@@ -12,9 +13,10 @@
         <label for="tendanhmuc">Mô tả</label><br>
         <textarea name="content"></textarea><br><br>
         <label for="Image">Ảnh</label><br>
-        <input type="text" name="image"><br><br>
+        <input type="file" name="image"><br><br>
         
         <button type="submit">thêm</button>
 </form>
+</div>
  <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.layoutwb', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\Wb\TN\resources\views/auth\Product.blade.php ENDPATH**/ ?>

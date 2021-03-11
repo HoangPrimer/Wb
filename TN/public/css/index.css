@@ -128,7 +128,7 @@ body{
 .footer{
     width: 100%;
     height: 100px;
-    background-color: cadetblue;
+    background-color: #b7dff3;
     margin-top: 10px;
     text-align: center;
     font-family: vivaldi,sans-serif;
@@ -137,62 +137,18 @@ body{
 .footer h1{
     font-family: vivaldi,sans-serif;
     font-size: 50px;
-    color: #19f02b;
+    color: #5ac3ec;
 }
 
-.main{width: 60%;
-    height: 1600px;
-    margin: auto;
-   }
+
 
 /*sanpham*/
-.directory{
-    width: 100%;
-    height: 600px;
+
+
+.profile{
+    width: 500px;
+    height: 1000px;
+    background-color: sandybrown;
     margin: auto;
-    background-color: #e5ebf0;
-    float: left;
+    color: rgb(46, 53, 49);
 }
-.row{
-    width: 100%;
-    height: 285px;
-    margin: 10px 0px 10px 0px;
-}
-.colums{
-    width: 210px;
-    height: 285px;
-    float: left;
-    margin: auto;
-    margin-left: 11px;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    border-radius: 5px;
-   
-}
-.colums .image{
-    width: 210px;
-    height: 135px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    clear: right;
-    float: right;
-}
-.colums .nd{
-width: 200px;
-height: 140px;
-margin: auto;
-float: right;
-
-}
-.colums .nd h4{
-    margin: 8px 0px 5px 15px;
-}
-.colums .nd p{
-    margin: 0px 0px 3px 30px ;
-}
-
-
-
-

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form action="{{ route('store')}}" method="post">
+<form action="{{ route('dstore')}}" method="post">
         @csrf
         <label for="tendanhmuc">Tên danh mục</label><br>
         <input type="text" name="tendm"><br><br>

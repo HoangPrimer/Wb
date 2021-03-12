@@ -8,6 +8,7 @@
   <link href="../css/index.css" rel="stylesheet" type="text/css"/>
   <link href="../css/page.css" rel="stylesheet" type="text/css"/>
   <link href="../css/product.css" rel="stylesheet" type="text/css"/>
+  <link href="../css/profile.css" rel="stylesheet" type="text/css"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=vivaldi">
   <title>Website - SecondHannd</title>
 </head>
@@ -18,8 +19,25 @@
                  <?php if(Route::has('login')): ?>
                 <div class="tab-user">
                     <?php if(auth()->guard()->check()): ?>
-                        <a href="<?php echo e(url('/profile')); ?>"><i class="fas fa-user"></i> Profile</a>
+                       
                       
+                                <a href="<?php echo e(route('profile')); ?>">
+                                    <?php echo e(Auth::user()->email); ?> 
+                                </a>
+
+                                <div >
+                                    <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        <?php echo e(__('Đăng xuất')); ?>
+
+                                    </a>
+
+                                    <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+                                        <?php echo csrf_field(); ?>
+                                    </form>
+                                </div>
+                            </li>
                     <?php else: ?>
                         <a href="<?php echo e(route('login')); ?>">Login</a>
 
@@ -49,9 +67,9 @@
             </div>
           </div>
      </div>
-     
+    <div class="mainnn">
      <?php echo $__env->yieldContent('content'); ?>
-    
+    </div>
      <div class="footer">
        <h1> Hashaghi By Yasuo</h1>
      </div>

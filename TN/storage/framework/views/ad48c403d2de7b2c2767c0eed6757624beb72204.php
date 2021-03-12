@@ -1,6 +1,6 @@
 <?php $__env->startSection('content'); ?>
 
-<form action="<?php echo e(route('store')); ?>" method="post">
+<form action="<?php echo e(route('dstore')); ?>" method="post">
         <?php echo csrf_field(); ?>
         <label for="tendanhmuc">Tên danh mục</label><br>
         <input type="text" name="tendm"><br><br>

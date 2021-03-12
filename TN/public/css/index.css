@@ -15,7 +15,7 @@ body{
     width:2000;
     margin:0 auto;
 }
-.header{width: 100%;height: 200px;}
+.header{width: 100%;height: 260px;}
 .header .top-bar{ width: 100%; 
     height: 50px;
     background-color:#d3eefc;
@@ -50,15 +50,16 @@ body{
  .header .top-bar .menu-bar i{margin-right: 5px;}
 .header .top-search{
     width: 100%;
-    height: 140px;
+    height: 200px;
     background-color: #f6f6f6;
-    float: left;
+    float: left; 
 }
 
 .header .top-search .logo{
     width: 200px;
     margin-left:  500px;
     float: left;
+    padding-top: 30px;
 }
 
 .header .top-search .box-searh{
@@ -67,7 +68,7 @@ body{
     white-space: nowrap;
     position: relative;
     float: left;
-    margin: 50px 0px 50px 100px;
+    margin: 70px 0px 50px 100px;
   }
  
   .header .top-search .box-searh .icon{
@@ -110,7 +111,7 @@ body{
       white-space: nowrap;
       position: relative;
       float: left;
-      margin: 50px 0px 50px 5px;
+      margin: 70px 0px 50px 5px;
   }
   .header .top-search .button button{
       width: 100px;
@@ -142,13 +143,3 @@ body{
 
 
 
-/*sanpham*/
-
-
-.profile{
-    width: 500px;
-    height: 1000px;
-    background-color: sandybrown;
-    margin: auto;
-    color: rgb(46, 53, 49);
-}

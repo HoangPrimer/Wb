@@ -2,6 +2,7 @@
 .main{width: 1116px;
     margin: auto;
     height:2000px;
+
    }
 .directory{
     width: 100%;
@@ -9,6 +10,7 @@
     margin: auto;
     background-color: #e5ebf0;
     float: left;
+    margin-top: 10px ;
 }
 .row{
     width: 100%;

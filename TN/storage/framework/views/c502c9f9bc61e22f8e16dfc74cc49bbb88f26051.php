@@ -1,6 +1,6 @@
 <?php $__env->startSection('content'); ?>
 <div class="nav">
-<form action="<?php echo e(route('product')); ?>" method="post">
+<form action="<?php echo e(route('pstore')); ?>" method="post">
         <?php echo csrf_field(); ?>
         <label for="tensanphamc">Tên sản phẩm</label><br>
         <input type="text" name="tensp"><br><br>

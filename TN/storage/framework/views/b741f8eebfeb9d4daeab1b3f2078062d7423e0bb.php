@@ -26,9 +26,7 @@
                 <a class="navbar-brand" href="<?php echo e(url('/')); ?>">
                 Home
                 </a>
-                <a class="navbar-brand" href="<?php echo e(url('create')); ?>">
-              Directory
-                </a>
+                
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="<?php echo e(__('Toggle navigation')); ?>">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -52,7 +50,18 @@
                                 </li>
                             <?php endif; ?>
                         <?php else: ?>
+                        <li class="nav-item">
+                             <a class="nav-link" href="<?php echo e(route('pcreate')); ?>">
+                                      List User
+                                 </a>
+                            </li>
+                             <li class="nav-item">
+                             <a class="nav-link" href="<?php echo e(route('dcreate')); ?>">
+                                       Directory
+                                 </a>
+                            </li>
                             <li class="nav-item dropdown">
+                                 
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <?php echo e(Auth::user()->email); ?> <span class="caret"></span>
                                 </a>

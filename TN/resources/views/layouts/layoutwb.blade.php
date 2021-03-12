@@ -8,6 +8,7 @@
   <link href="../css/index.css" rel="stylesheet" type="text/css"/>
   <link href="../css/page.css" rel="stylesheet" type="text/css"/>
   <link href="../css/product.css" rel="stylesheet" type="text/css"/>
+  <link href="../css/profile.css" rel="stylesheet" type="text/css"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=vivaldi">
   <title>Website - SecondHannd</title>
 </head>
@@ -18,8 +19,24 @@
                  @if (Route::has('login'))
                 <div class="tab-user">
                     @auth
-                        <a href="{{ url('/profile') }}"><i class="fas fa-user"></i> Profile</a>
+                       
                       
+                                <a href="{{ route('profile') }}">
+                                    {{ Auth::user()->email }} 
+                                </a>
+
+                                <div >
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Đăng xuất') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
@@ -49,9 +66,9 @@
             </div>
           </div>
      </div>
-     
+    <div class="mainnn">
      @yield('content')
-    
+    </div>
      <div class="footer">
        <h1> Hashaghi By Yasuo</h1>
      </div>

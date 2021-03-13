@@ -51,12 +51,12 @@
                             <?php endif; ?>
                         <?php else: ?>
                         <li class="nav-item">
-                             <a class="nav-link" href="<?php echo e(route('pcreate')); ?>">
+                             <a class="nav-link" href="<?php echo e(route('pget')); ?>">
                                       List User
                                  </a>
                             </li>
                              <li class="nav-item">
-                             <a class="nav-link" href="<?php echo e(route('dcreate')); ?>">
+                             <a class="nav-link" href="<?php echo e(route('ppost')); ?>">
                                        Directory
                                  </a>
                             </li>

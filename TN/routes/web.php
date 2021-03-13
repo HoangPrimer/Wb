@@ -27,8 +27,14 @@ Route::post('directory/store', 'DirectoryController@store')->name('dstore');
 
 //product
 
-Route::get('product/create', 'ProductController@create')->name('pcreate');
-Route::post('product/store', 'ProductController@store')->name('pstore');
+Route::get('post/create', 'PostController@getpost')->name('pget');
+Route::post('post/store', 'PostController@postpost')->name('ppost');
 //profile
 
 Route::get('profile','ProfileController@create')->name('profile');
+
+//
+Route::get('upfile',function(){
+        return view('auth\uploadFile');
+});
+Route::post('postfile','PostController@postFile')->name('uploadfile');

@@ -51,12 +51,12 @@
                             @endif
                         @else
                         <li class="nav-item">
-                             <a class="nav-link" href="{{route('pcreate') }}">
+                             <a class="nav-link" href="{{route('pget') }}">
                                       List User
                                  </a>
                             </li>
                              <li class="nav-item">
-                             <a class="nav-link" href="{{route('dcreate') }}">
+                             <a class="nav-link" href="{{route('ppost') }}">
                                        Directory
                                  </a>
                             </li>

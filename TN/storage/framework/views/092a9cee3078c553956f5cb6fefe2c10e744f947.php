@@ -7,7 +7,7 @@
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <link href="../css/index.css" rel="stylesheet" type="text/css"/>
   <link href="../css/page.css" rel="stylesheet" type="text/css"/>
-  <link href="../css/product.css" rel="stylesheet" type="text/css"/>
+  <link href="../css/post.css" rel="stylesheet" type="text/css"/>
   <link href="../css/profile.css" rel="stylesheet" type="text/css"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=vivaldi">
   <title>Website - SecondHannd</title>
@@ -19,8 +19,6 @@
                  <?php if(Route::has('login')): ?>
                 <div class="tab-user">
                     <?php if(auth()->guard()->check()): ?>
-                       
-                      
                                 <a href="<?php echo e(route('profile')); ?>">
                                     <?php echo e(Auth::user()->email); ?> 
                                 </a>
@@ -51,7 +49,7 @@
                  <div class="menu-bar">
                 <a href="<?php echo e(route('index')); ?>"><i class="fas fa-home"></i>Home</a>
                 <a href="https://oto.com.vn/" title="Truy cập oto.com.vn"><i class="fas fa-car"></i>Oto.com.vn</a>
-                <a href="<?php echo e(url('product/create')); ?>"><i class="fas fa-pencil-alt"></i>Đăng Tin </a>
+                <a href="<?php echo e(route('pget')); ?>"><i class="fas fa-pencil-alt"></i>Đăng Tin </a>
                  </div>
              </div>
           <div class="top-search">
@@ -73,6 +71,6 @@
      <div class="footer">
        <h1> Hashaghi By Yasuo</h1>
      </div>
-   </div>
+    </div>
 </body>
 </html><?php /**PATH C:\xampp\htdocs\Wb\TN\resources\views/layouts/layoutwb.blade.php ENDPATH**/ ?>

@@ -2,22 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Product;
-use App\Image;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Post;
 use Illuminate\Support\Facades\DB;
+use App\Image;
+use Illuminate\Support\Facades\Auth;
 
-
-class ProductController extends Controller
+class PostController extends Controller
 {
-
-    public function __construct()
-    {
-        
-        $this->middleware('auth')->except('logout');
-        
-    }
     /**
      * Display a listing of the resource.
      *
@@ -26,7 +18,6 @@ class ProductController extends Controller
     public function index()
     {
         //
-      
     }
 
     /**
@@ -34,10 +25,10 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function getpost()
     {
         $a = DB::table('directories')->get();
-        return view('auth\Product',compact('a'));
+        return view('auth\Post',compact('a'));
         
     }
 
@@ -47,22 +38,15 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function postpost(Request $request)
     {
-        $a = DB::table('products')->get();
-        $new = new Product;
-        $new->name_product = $request->tensp;
-        $new->content = $request->content;
-        $new->user_id = Auth::id();
-        $new->directory_id = $request->tendm;
-        $new->status ='1';
-        $new->save();
-
-        $ima = new Image;
-        $ima->name = $request->image;
-       
-        $ima->save();
-        return  redirect()->action('ProductController@create');
+       if($request->hasFile('file'))
+       {
+           echo "da co file";
+       }
+       else {
+           echo "chua co file";
+       }
 
       
     }
@@ -111,5 +95,9 @@ class ProductController extends Controller
     {
         //
     }
-     
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
 }

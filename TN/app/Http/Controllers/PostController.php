@@ -7,7 +7,7 @@ use App\Post;
 use Illuminate\Support\Facades\DB;
 use App\Image;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Str;
 class PostController extends Controller
 {
     /**
@@ -40,13 +40,18 @@ class PostController extends Controller
      */
     public function postpost(Request $request)
     {
-       if($request->hasFile('file'))
-       {
-           echo "da co file";
-       }
-       else {
-           echo "chua co file";
-       }
+
+            $post = new Post;
+        
+          $file = $request->file('file');
+          $duoi = $file->getClientOriginalExtension();
+          if($duoi != 'jpg' && $duoi != 'png' &&$duoi != 'jpeg'){
+              return redirect('/post/store')->with('thongbao','ban chi chon dc file jpg , png, jepg!');
+          }
+          $name =$file->getClientOriginalName();
+          $file->move("images/anhhang",$name);
+        
+       
 
       
     }

@@ -26,9 +26,7 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        $id = Auth::id();
-        $info = DB::table('users')->where('id','$id')->get();
-        return view('auth\Profile',compact('info'));
+        return view('auth\Profile');
     }
 
     /**
@@ -73,7 +71,21 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $file = $request->file('image');
+        $name =$file->getClientOriginalName();
+        $file->move("images/anhhang", $name);
+         $update = User::find($id);
+        $update->email = $request->email;
+        $update->name = $request->name;
+        $update->address = $request->address;
+        $update->phone = $request->phone;
+        $update->date_of_birth = $request->date_of_birth;
+        $update->gender = $request->gender;
+        $update->image = $file->getClientOriginalName();
+        $update->save();
+           
+       
+       
     }
 
     /**
@@ -85,5 +97,9 @@ class ProfileController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function __construct()
+    {
+        $this->middleware('auth');
     }
 }

@@ -30,8 +30,10 @@ body{
         font-size: 20px;
         margin-left: 30px;float: left;
 }
-.header .top-bar .tab-user p{font-size: 20px;
-    margin-left: 30px;float: left}
+.header .top-bar .tab-user i{
+    margin-left: 30px;float: left;
+        margin-top: 5px;
+}
 .header .top-bar .tab-user a:hover{
     color: #2b8fff;
 }
@@ -135,11 +137,12 @@ body{
     font-family: vivaldi,sans-serif;
     line-height: 100px;
 }
-.footer span{
+.footer h1{
     font-family: vivaldi,sans-serif;
     font-size: 50px;
     color: #5ac3ec;
 }
+
 
 
 

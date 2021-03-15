@@ -30,7 +30,7 @@ Route::post('directory/store', 'DirectoryController@store')->name('dstore');
 Route::get('post/create', 'PostController@getpost')->name('pget');
 Route::post('post/store', 'PostController@postpost')->name('ppost');
 //profile
-
+Route::post('profile/update/{id}','ProfileController@update');
 Route::get('profile','ProfileController@create')->name('profile');
 
 //

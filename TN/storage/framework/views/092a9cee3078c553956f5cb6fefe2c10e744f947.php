@@ -20,9 +20,9 @@
                 <div class="tab-user">
                     <?php if(auth()->guard()->check()): ?>
                                 <a href="<?php echo e(route('profile')); ?>">
-                                    <?php echo e(Auth::user()->email); ?> 
+                                    <?php echo e(Auth::user()->name); ?> 
                                 </a>
-
+                                <i class="fa fa-angle-double-right"></i>
                                 <div >
                                     <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
                                        onclick="event.preventDefault();
@@ -35,7 +35,6 @@
                                         <?php echo csrf_field(); ?>
                                     </form>
                                 </div>
-                            </li>
                     <?php else: ?>
                         <a href="<?php echo e(route('login')); ?>">Login</a>
 

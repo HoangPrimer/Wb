@@ -20,9 +20,9 @@
                 <div class="tab-user">
                     @auth
                                 <a href="{{ route('profile') }}">
-                                    {{ Auth::user()->email }} 
+                                    {{ Auth::user()->name }} 
                                 </a>
-
+                                <i class="fa fa-angle-double-right"></i>
                                 <div >
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -34,7 +34,6 @@
                                         @csrf
                                     </form>
                                 </div>
-                            </li>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 

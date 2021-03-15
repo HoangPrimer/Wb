@@ -25,12 +25,14 @@
                         </div>
                     </div>
                     <div class="tit"> 
+                        @for( $i = 1 ; $i <= 3 ; $i++)
                        <div class="txt">
-                            <p>Ảnh</p>
+                            <p>Ảnh{!! $i !!}</p>
                         </div>
                         <div class="">
-                            <input type="file" name="file" >
+                            <input type="file" name="file[]" >
                         </div>
+                        @endfor
                      </div>
 
                     <div class="tit"> 

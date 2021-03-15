@@ -4,7 +4,7 @@
 <form action="profile/update/{{Auth::user()->id}}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="profile">
-        <img src="../images/anhhang/{{Auth::user()->image}}" width="130px" height="130px" style="border-radius:50%">
+        <img src="../images/avatar/{{Auth::user()->image}}" width="130px" height="130px" style="border-radius:50%">
         <input type="hidden" value="{{Auth::user()->id}}">
         <input type="text" name="name" value="{{Auth::user()->name}}"><br>
         <input type="text" name="email" value="{{Auth::user()->email}}"><br>

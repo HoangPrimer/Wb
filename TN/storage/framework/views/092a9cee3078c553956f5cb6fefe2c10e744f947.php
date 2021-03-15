@@ -20,11 +20,11 @@
                 <div class="tab-user">
                     <?php if(auth()->guard()->check()): ?>
                                 <a href="<?php echo e(route('profile')); ?>">
-                                    <?php echo e(Auth::user()->name); ?> 
+                                   <img src="../images/avatar/<?php echo e(Auth::user()->image); ?>" width="50px" height="50px" style="border-radius:50%"> 
                                 </a>
                                 <i class="fa fa-angle-double-right"></i>
                                 <div >
-                                    <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
+                                    <a  href="<?php echo e(route('logout')); ?>"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         <?php echo e(__('Đăng xuất')); ?>

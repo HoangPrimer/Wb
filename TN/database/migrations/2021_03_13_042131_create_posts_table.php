@@ -20,8 +20,8 @@ class CreatePostsTable extends Migration
             $table->string('name_product');
             $table->string('content');
             $table->integer('price');
-            $table->string('public');
-            $table->boolean('status');
+            $table->string('public')->default('private');
+            $table->boolean('status')->default('1');
             $table->timestamps();
         });
     }

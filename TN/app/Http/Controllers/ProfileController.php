@@ -73,7 +73,7 @@ class ProfileController extends Controller
     {
         $file = $request->file('image');
         $name =$file->getClientOriginalName();
-        $file->move("images/anhhang", $name);
+        $file->move("images/avatar", $name);
          $update = User::find($id);
         $update->email = $request->email;
         $update->name = $request->name;
@@ -83,7 +83,7 @@ class ProfileController extends Controller
         $update->gender = $request->gender;
         $update->image = $file->getClientOriginalName();
         $update->save();
-           
+           return redirect()->action('ProfileController@create');
        
        
     }

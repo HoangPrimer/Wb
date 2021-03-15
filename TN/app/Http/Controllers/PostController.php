@@ -40,20 +40,29 @@ class PostController extends Controller
      */
     public function postpost(Request $request)
     {
+          $post = new Post;
+         $post->directory_id = $request->tendm;
+         $post->user_id  = Auth::id();
+         $post->name_product = $request->title;
+         $post->content = $request->content;
+         $post->price  =$request->price;
+         $post->save();
 
-            $post = new Post;
+         $post_id = $post ->id;
         
-          $file = $request->file('file');
-          $duoi = $file->getClientOriginalExtension();
-          if($duoi != 'jpg' && $duoi != 'png' &&$duoi != 'jpeg'){
-              return redirect('/post/store')->with('thongbao','ban chi chon dc file jpg , png, jepg!');
-          }
-          $name =$file->getClientOriginalName();
-          $file->move("images/anhhang",$name);
-        
-       
-
-      
+         if($request->hasFile('file')){
+             foreach($request->file('file') as $file){
+                 $post_image = new Image;
+                 if(isset($file)){
+                     $post_image->name = $file->getClientOriginalName();
+                     $post_image->post_id = $post_id;
+                     $file->move("images/anhhang",$file->getClientOriginalName());
+                     $post_image->save();
+                 }
+             }
+         }
+          
+         return  redirect()->action('PostController@getpost');
     }
 
     /**

@@ -118,7 +118,54 @@
 
       </div>
   </div>
-  <div class="producttt"></div>
+ 
+  <div class="producttt">
+             <div class="title">
+                     <h1> Có Thể Bạn Quan Tâm</h1>
+             </div>
+   
+            <div class="row">
+                <div class="colum-d3">
+                   <div class="image-d1">
+                         <img src="../images/cat-92.jpg">
+                   </div>
+                    <div class="nd">
+                        <p>Tên Sản Phẩm </p>
+                        <p>90000</p>
+                    </div>
+                </div>
+
+                <div class="colum-d3">
+                   <div class="image-d1">
+                         <img src="../images/cat-92.jpg">
+                   </div>
+                    <div class="nd">
+                        <p>Tên Sản Phẩm </p>
+                        <p>90000</p>
+                    </div>
+                </div>
+
+                <div class="colum-d3">
+                   <div class="image-d1">
+                         <img src="../images/cat-92.jpg">
+                   </div>
+                    <div class="nd">
+                        <p>Tên Sản Phẩm </p>
+                        <p>90000</p>
+                    </div>
+                </div>
+
+                <div class="colum-d3">
+                   <div class="image-d1">
+                         <img src="../images/cat-92.jpg">
+                   </div>
+                    <div class="nd">
+                        <p>Tên Sản Phẩm </p>
+                        <p>90000</p>
+                    </div>
+                </div>
+
+            </div>
     </div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.layoutwb', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\Wb\TN\resources\views/welcome.blade.php ENDPATH**/ ?>

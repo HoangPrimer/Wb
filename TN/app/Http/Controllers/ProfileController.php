@@ -26,6 +26,7 @@ class ProfileController extends Controller
      */
     public function create()
     {
+        
         return view('auth\Profile');
     }
 

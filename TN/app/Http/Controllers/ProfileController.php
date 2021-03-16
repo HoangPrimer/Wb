@@ -71,17 +71,21 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $file = $request->file('image');
-        $name =$file->getClientOriginalName();
-        $file->move("images/avatar", $name);
-         $update = User::find($id);
+        $update = User::find($id);
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $name =$file->getClientOriginalName();
+            $file->move("images/avatar", $name);
+            $update->image = $file->getClientOriginalName();
+        }
+        
         $update->email = $request->email;
         $update->name = $request->name;
         $update->address = $request->address;
         $update->phone = $request->phone;
         $update->date_of_birth = $request->date_of_birth;
         $update->gender = $request->gender;
-        $update->image = $file->getClientOriginalName();
+      
         $update->save();
            return redirect()->action('ProfileController@create');
        

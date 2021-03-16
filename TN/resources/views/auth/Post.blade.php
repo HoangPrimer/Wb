@@ -13,7 +13,7 @@
                             <p>Tiêu đề</p>
                         </div>
                         <div class="inp">
-                            <input type="text" name="title">
+                            <input type="text" name="title" required>
                         </div>
                     </div>
                     <div class="tit"> 
@@ -21,7 +21,7 @@
                             <p>Mô tả</p>
                         </div>
                         <div class="inp">
-                            <textarea name="content"></textarea>
+                            <textarea name="content" required></textarea>
                         </div>
                     </div>
                     <div class="tit"> 
@@ -30,7 +30,7 @@
                             <p>Ảnh{!! $i !!}</p>
                         </div>
                         <div class="">
-                            <input type="file" name="file[]" >
+                            <input type="file" name="file[]" required>
                         </div>
                         @endfor
                      </div>
@@ -40,7 +40,7 @@
                             <p>Giá</p>
                         </div>
                         <div class="inp">
-                            <input class="asd" type="text" name="price"><span>VND</span>
+                            <input class="asd" type="text" name="price" required><span>VND</span>
                         </div>
                      </div>
                      <div class="tit"> 

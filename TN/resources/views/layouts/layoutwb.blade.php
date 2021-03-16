@@ -57,10 +57,11 @@
             <div class="box-searh">
                  <span class="icon"><i class="fas fa-search"></i></span>
                  <input type="search"  id="search" placeholder="Search..."> 
+                 <div class="button">
+                    <button type="submit">Tìm Kiếm</button>
+                 </div>
             </div>
-            <div class="button">
-              <button type="submit">Tìm Kiếm</button>
-            </div>
+           
           </div>
      </div>
     <div class="mainnn">

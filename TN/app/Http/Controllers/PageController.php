@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Post;
 
 
 class PageController extends Controller
 {
-    //
+    
+   
     public function getIndex(){
         $dodientu = DB::table('directories')->where('category','Đồ điện tử')->get();
         $nghenhin = DB::table('directories')->where('category','Thiết bị nghe nhìn')->get();
@@ -21,14 +23,7 @@ class PageController extends Controller
         $sach = DB::table('directories')->where('category','Sách báo, Nghệ thuật')->get();
         $may = DB::table('directories')->where('category','Máy móc chuyên dụng')->get();
 
-
-         $post = DB::table('images')
-         ->select('posts.id', 'posts.name_post', DB::raw("COUNT('images.id') AS image_count"))
-         ->join('posts', 'posts.id', '=', 'images.post_id')
-         ->orderBy('image_count', 'desc')
-         ->groupBy('posts.id')
-         ->take(1)
-         ->get();
-        return view('welcome',compact('dodientu','nghenhin','dogiadung','xeco','thoitrang','noithat','vatnuoi','thethao','sach','may','post'));
+         $posts = Post::with('image')->get();
+        return view('welcome',compact('dodientu','nghenhin','dogiadung','xeco','thoitrang','noithat','vatnuoi','thethao','sach','may','posts'));
     }
 }

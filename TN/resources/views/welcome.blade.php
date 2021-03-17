@@ -127,10 +127,10 @@
              </div>
    
             <div class="row-d5">
-                @foreach($post as $po)
+                @foreach($posts as $po)
                 <div class="colum-d3">
                    <div class="image-d1">
-                         <img src="../images/anhhang/{{$po->name}}">
+                         <img src="images/anhhang/{{ DB::table('images')->where('post_id', $po->id)->value('name')}}">
                    </div>
                     <div class="image-d2">
                         <p>{{$po->name_post}} </p>

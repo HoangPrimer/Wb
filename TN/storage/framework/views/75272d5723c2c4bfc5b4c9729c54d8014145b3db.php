@@ -125,10 +125,10 @@
              </div>
    
             <div class="row-d5">
-                <?php $__currentLoopData = $post; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $po): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $po): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="colum-d3">
                    <div class="image-d1">
-                         <img src="../images/anhhang/<?php echo e($po->name); ?>">
+                         <img src="images/anhhang/<?php echo e(DB::table('images')->where('post_id', $po->id)->value('name')); ?>">
                    </div>
                     <div class="image-d2">
                         <p><?php echo e($po->name_post); ?> </p>

@@ -65,10 +65,15 @@ float: right;
     line-height: 50px;
     margin:auto;
 }
+.row-d5{
+    width: 100%;
+    height: 300px;
+    margin: 10px 0px 10px 0px;
+}
 .colum-d3{
-        width: 265px;
-        height: 275px;
-        float: left;
+    width: 265px;
+    height: 300px;
+    float: left;
     margin: auto;
     margin-left: 11px;
     display: flex;
@@ -77,12 +82,20 @@ float: right;
     border-radius: 5px;
    
 }
-.colums .image-d3{
+.colum-d3 .image-d1{
     width: 255px;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    clear: right;
-    float: right;
+    height: 220px;
+   float: left;
+   margin: auto;
+}
+.colum-d3 .image-d2{
+    width: 255px;
+    height: 65px;
+    margin-bottom: 10px;
+    background-color: thistle;
+    margin: auto;
+}
+.colum-d3 .image-d1 img{
+        width: 255px;
+        height: 220px;
 }

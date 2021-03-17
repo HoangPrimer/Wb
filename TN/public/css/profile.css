@@ -7,7 +7,8 @@
 }
 .nav-left{
     width: 500px;
-    height: 800px;
+    height: 900px;
+    float: left;
 }
 .nav-left .heder{
     width: 100%;
@@ -47,6 +48,9 @@
     background-color: rgb(160, 213, 243);
     border-radius: 5px;
 }
-.form-info {
-    display: none;
+.profile .nav-right{
+    width: 700px;
+    height: 900px;
+    background-color: rgb(35, 241, 97);
+    float: right;
 }

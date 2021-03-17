@@ -124,47 +124,18 @@
                      <h1> Có Thể Bạn Quan Tâm</h1>
              </div>
    
-            <div class="row">
+            <div class="row-d5">
+                <?php $__currentLoopData = $post; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $po): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="colum-d3">
                    <div class="image-d1">
-                         <img src="../images/cat-92.jpg">
+                         <img src="../images/anhhang/<?php echo e($po->name); ?>">
                    </div>
-                    <div class="nd">
-                        <p>Tên Sản Phẩm </p>
-                        <p>90000</p>
+                    <div class="image-d2">
+                        <p><?php echo e($po->name_post); ?> </p>
+                        <p><?php echo e($po->price); ?></p>
                     </div>
                 </div>
-
-                <div class="colum-d3">
-                   <div class="image-d1">
-                         <img src="../images/cat-92.jpg">
-                   </div>
-                    <div class="nd">
-                        <p>Tên Sản Phẩm </p>
-                        <p>90000</p>
-                    </div>
-                </div>
-
-                <div class="colum-d3">
-                   <div class="image-d1">
-                         <img src="../images/cat-92.jpg">
-                   </div>
-                    <div class="nd">
-                        <p>Tên Sản Phẩm </p>
-                        <p>90000</p>
-                    </div>
-                </div>
-
-                <div class="colum-d3">
-                   <div class="image-d1">
-                         <img src="../images/cat-92.jpg">
-                   </div>
-                    <div class="nd">
-                        <p>Tên Sản Phẩm </p>
-                        <p>90000</p>
-                    </div>
-                </div>
-
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
     </div>
 <?php $__env->stopSection(); ?>

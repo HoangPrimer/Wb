@@ -30,7 +30,7 @@
                             <p>Ảnh{!! $i !!}</p>
                         </div>
                         <div class="">
-                            <input type="file" name="file[]" required>
+                            <input type="file" name="file[]" required >
                         </div>
                         @endfor
                      </div>

@@ -34,9 +34,12 @@
              <span> {{Auth::user()->gender}}</span>
          </div>
          <div class="img">
-             <button  type="submit" onclick="form-info">Cập Nhật Thông Tin</button>
+             <button  type="submit" onclick="info()">Cập Nhật Thông Tin</button>
          </div>
-         <form class="form-info" action="profile/update/{{Auth::user()->id}}" method="post" enctype="multipart/form-data">
+        
+  </div>
+   <div class="nav-right">
+         <form id="form-info" action="profile/update/{{Auth::user()->id}}" method="post" enctype="multipart/form-data">
          @csrf
                 <h3>cập nhật thông tin</h3>
                 <input type="text" name="name">
@@ -44,8 +47,21 @@
                 <input type="text" name="address">
                 <input type="number" name="phone">
                 <input type="text" name="gender" >
+                <button></button>
          </form>
-  </div>
-   <div class="nav-right"></div>
+   </div>
+   
 </div>
+    <script>
+            function info(){
+               if( document.getElementById('form-info').style.display === "none")
+               {
+                document.getElementById('form-info').style.display="block";
+               }
+               else
+               {
+                document.getElementById('form-info').style.display="none";
+               }
+            }
+    </script>
 @endsection

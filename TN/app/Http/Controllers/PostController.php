@@ -43,7 +43,7 @@ class PostController extends Controller
           $post = new Post;
          $post->directory_id = $request->tendm;
          $post->user_id  = Auth::id();
-         $post->name_product = $request->title;
+         $post->name_post = $request->title;
          $post->content = $request->content;
          $post->price  =$request->price;
          $post->save();

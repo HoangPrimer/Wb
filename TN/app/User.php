@@ -41,4 +41,11 @@ class User extends Authenticatable
         return $this->is_admin === self::ADMIN_Type;
     }
     
+    public function comment(){
+        return $this->hasMany('App\Comment','user_id','id');
+    }
+
+    public function post(){
+        return $this->hasMany('App\Post','user_id','id');
+    }
 }

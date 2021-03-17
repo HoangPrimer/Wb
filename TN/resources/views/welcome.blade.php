@@ -126,47 +126,18 @@
                      <h1> Có Thể Bạn Quan Tâm</h1>
              </div>
    
-            <div class="row">
+            <div class="row-d5">
+                @foreach($post as $po)
                 <div class="colum-d3">
                    <div class="image-d1">
-                         <img src="../images/cat-92.jpg">
+                         <img src="../images/anhhang/{{$po->name}}">
                    </div>
-                    <div class="nd">
-                        <p>Tên Sản Phẩm </p>
-                        <p>90000</p>
+                    <div class="image-d2">
+                        <p>{{$po->name_post}} </p>
+                        <p>{{$po->price}}</p>
                     </div>
                 </div>
-
-                <div class="colum-d3">
-                   <div class="image-d1">
-                         <img src="../images/cat-92.jpg">
-                   </div>
-                    <div class="nd">
-                        <p>Tên Sản Phẩm </p>
-                        <p>90000</p>
-                    </div>
-                </div>
-
-                <div class="colum-d3">
-                   <div class="image-d1">
-                         <img src="../images/cat-92.jpg">
-                   </div>
-                    <div class="nd">
-                        <p>Tên Sản Phẩm </p>
-                        <p>90000</p>
-                    </div>
-                </div>
-
-                <div class="colum-d3">
-                   <div class="image-d1">
-                         <img src="../images/cat-92.jpg">
-                   </div>
-                    <div class="nd">
-                        <p>Tên Sản Phẩm </p>
-                        <p>90000</p>
-                    </div>
-                </div>
-
+                @endforeach
             </div>
     </div>
 @endsection

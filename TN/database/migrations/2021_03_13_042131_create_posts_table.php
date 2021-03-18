@@ -16,9 +16,7 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('directory_id');
-            $table->foreign('directory_id')->references('id')->on('directories');
             $table->integer('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
             $table->string('name_post');
             $table->string('content');
             $table->integer('price');

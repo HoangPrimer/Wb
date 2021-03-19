@@ -20,6 +20,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+Route::get('/drproduct', function (){
+        return view('drproduct');
+});
+
+
 //them danhmuc
 Route::get('directory/create', 'DirectoryController@create')->name('dcreate');
 

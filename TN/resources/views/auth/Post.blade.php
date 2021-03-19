@@ -6,7 +6,7 @@
                 <h1>Đăng Tin Bán Sản Phẩm</h1>
         </div>
         <div class="mid-content">
-            <form class="mct-form" action="{{url('post\store')}}" method="post" enctype="multipart/form-data">
+            <form class="mct-form" action="{{route('addpost')}}" method="post" enctype="multipart/form-data">
             @csrf
                    <div class="tit">     
                         <div class="txt">

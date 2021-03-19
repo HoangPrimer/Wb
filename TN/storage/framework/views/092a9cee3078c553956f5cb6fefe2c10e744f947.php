@@ -6,14 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <link href="../css/index.css" rel="stylesheet" type="text/css"/>
-
   <link href="../css/page.css" rel="stylesheet" type="text/css"/>
   <link href="../css/post.css" rel="stylesheet" type="text/css"/>
   <link href="../css/profile.css" rel="stylesheet" type="text/css"/>
   <link href="../css/drproduct.css" rel="stylesheet" type="text/css"/>
   <link href="../css/fontawesome-free-5.15.2-web/" rel="stylesheet"/>
-
-
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=vivaldi">
   <title>Website - SecondHannd</title>
 </head>

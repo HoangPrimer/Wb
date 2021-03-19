@@ -123,8 +123,6 @@
              <div class="title">
                      <h1> Có Thể Bạn Quan Tâm</h1>
              </div>
-   
-            <div class="row-d5">
                 <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $po): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="colum-d3">
                    <div class="image-d1">
@@ -136,7 +134,7 @@
                     </div>
                 </div>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-            </div>
+           
     </div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.layoutwb', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\Wb\TN\resources\views/welcome.blade.php ENDPATH**/ ?>

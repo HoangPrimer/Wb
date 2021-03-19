@@ -23,7 +23,7 @@ class PageController extends Controller
         $sach = DB::table('directories')->where('category','Sách báo, Nghệ thuật')->get();
         $may = DB::table('directories')->where('category','Máy móc chuyên dụng')->get();
 
-         $posts = Post::with('image')->get();
-        return view('welcome',compact('dodientu','nghenhin','dogiadung','xeco','thoitrang','noithat','vatnuoi','thethao','sach','may','posts'));
+         $posts = Post::with('image')->paginate(8);
+        return view('auth.welcome',compact('dodientu','nghenhin','dogiadung','xeco','thoitrang','noithat','vatnuoi','thethao','sach','may','posts'));
     }
 }

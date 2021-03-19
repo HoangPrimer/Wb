@@ -12,29 +12,45 @@
 */
 
 
-
-Route::get('/','PageController@getIndex' )->name('index');
+Route::get('/',[
+        'as'=>'home',
+        'uses'=>'PageController@getIndex'
+]);
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 
 //them danhmuc
+Route::group(['prefix'=>'home'], function()
+{
+        Route::get('post',[
+                'as'=>'createpost',
+                'uses'=>'PostController@getpost'
+        ]);
+
+        Route::post('post/create',[
+                'as'=>'addpost',
+                'uses'=>'PostController@postpost'
+        ]);
+        
+        Route::get('profile',[
+                'as'=>'profile',
+                'uses'=>'ProfileController@create'
+        ]);
+        
+        Route::post('profile/update/{id}',[
+                'as'=>'updateprofile',
+                'uses'=>'ProfileController@update'
+        ]);
+});
 Route::get('directory/create', 'DirectoryController@create')->name('dcreate');
 
 Route::post('directory/store', 'DirectoryController@store')->name('dstore');
 
-//product
+//admin
 
-Route::get('post/create', 'PostController@getpost')->name('pget');
-Route::post('post/store', 'PostController@postpost')->name('ppost');
-//profile
-Route::post('profile/update/{id}','ProfileController@update');
-Route::get('profile','ProfileController@create')->name('profile');
-
-//
-Route::get('upfile',function(){
-        return view('auth\uploadFile');
-});
-Route::post('postfile','PostController@postFile')->name('uploadfile');
+Route::get('homeadmin',[
+        'as'=>'admin/home/index',
+        'uses'=>'AdminController@index'
+    ]);

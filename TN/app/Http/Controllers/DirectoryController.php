@@ -28,7 +28,7 @@ class DirectoryController extends Controller
     public function create()
     {
         //
-        return view('addDirectory');
+        return view('admin.addDirectory');
     }
 
     /**

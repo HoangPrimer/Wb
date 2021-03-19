@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="profile">
-   <div class="nav-left">
+   
          <div class="heder">
              <h1> Thông Tin Cá Nhân</h1>
          </div>
@@ -37,31 +37,7 @@
              <button  type="submit" onclick="info()">Cập Nhật Thông Tin</button>
          </div>
         
-  </div>
-   <div class="nav-right">
-         <form id="form-info" action="profile/update/{{Auth::user()->id}}" method="post" enctype="multipart/form-data">
-         @csrf
-                <h3>cập nhật thông tin</h3>
-                <input type="text" name="name">
-                <input type="email" name="email">
-                <input type="text" name="address">
-                <input type="number" name="phone">
-                <input type="text" name="gender" >
-                <button></button>
-         </form>
-   </div>
-   
+  
 </div>
-    <script>
-            function info(){
-               if( document.getElementById('form-info').style.display === "none")
-               {
-                document.getElementById('form-info').style.display="block";
-               }
-               else
-               {
-                document.getElementById('form-info').style.display="none";
-               }
-            }
-    </script>
+   
 @endsection

@@ -33,9 +33,9 @@
             </div>
         </nav>
         <div class="content">
-            <div class="info">
+            <div id="info">
             <div class="img-sp">
-                <img src="../img/content-post.jpg" width="350px" height="250px" style="border-radius:5px;"/>
+                <img src="../img/content-post.jpg" width="550px" height="400px" style="border-radius:5px;"/>
             </div>
             <div id="infomation">
 
@@ -64,7 +64,7 @@
             </div>
 
             <div class="description">
-                <h3 style="text-align: center;">Mô tả</h3>
+                <h2 style="text-align: center;">Mô tả</h2>
                 <p>Theo từ điển Urban Dictionary, wibu (hay weeaboo) là một thuật ngữ mang thái độ tiêu cực, dùng để chỉ những ai bị ám ảnh, phát cuồng quá mức đối với văn hóa Nhật Bản đến độ gây phiền cho người khác. Hầu hết các wibu đều không tự nhận thức được mức độ cuồng của bản thân. Một biểu hiện khác của wibu là có mong muốn được trở thành người Nhật.
 
                 Ngày nay, wibu còn dùng để ám chỉ những kẻ không hiểu rõ về Nhật hay văn hóa Nhật nhưng rất thích ra vẻ, thể hiện.<br/>
@@ -75,11 +75,58 @@
             </div>
 
             <div class="comment">
-                Bình Luận
+                <div id="user">
+                <img src="" width="60px" height="60px" style="border-radius:50%;"/>
+                <textarea rows="2" cols="100" placeholder="Nhan xet" style="max-width:600px; min-width:600px; main-height:100px; max-height:100px; outline:none; margin-left:3%; padding:2%"></textarea>
+                </div>
+                <!---User-comment---->
+                <div id="user-comment">
+                    <div id="img-user">
+                        <img src="" height="60px" width="60px" style="border-radius:50%;"/>
+                    </div>
+                    <div id="name-user">
+                        <p>Name-user</p>
+                    </div>
+                    <div id="comment-user">
+                        <p style="width: 550px; height:100%;">Theo từ điển Urban Dictionary, wibu (hay weeaboo) là một thuật ngữ mang thái độ tiêu cực, dùng để chỉ những ai bị ám ảnh, phát cuồng quá mức đối với văn hóa Nhật Bản đến độ gây phiền cho người khác. Hầu hết các wibu đều không tự nhận thức được mức độ cuồng của bản thân. Một biểu hiện khác của wibu là có mong muốn được trở thành người Nhật.
+
+Ngày nay, wibu còn dùng để ám chỉ những kẻ không hiểu rõ về Nhật hay văn hóa Nhật nhưng rất thích ra vẻ, thể hiện.<br/>
+Wibu xuất phát từ đâu?
+Chính xác thì ban đầu, thuật ngữ “weeaboo” là tiếng lóng dùng để chỉ những người phương Tây bị ám ảnh bởi văn hóa Nhật, xem nền văn hóa này vượt trội hơn so với văn hóa quốc gia và các nền văn hóa khác. Tiền thân của weeaboo là Wapanese, là từ được kết hợp từ white (trắng/da trắng) hoặc wannabe (muốn trở thành) và Japanese (thuộc về Nhật Bản).
+
+Xuất hiện nhiều trên trang web 4chan vào đầu những năm 2000, Wapanese mang ý nghĩa miệt thị những người da trắng phát cuồng mọi thứ về văn hóa Nhật Bản. Khi weeaboo du nhập vào Việt Nam, từ này bị biến thể thành wibu (phát âm của weeaboo). </p>
+                    </div>                    
+                </div>
+                <!---------->
+                <div id="user-comment">
+                    <div id="img-user">
+                        <img src="" height="60px" width="60px" style="border-radius:50%;"/>
+                    </div>
+                    <div id="name-user">
+                        <p>Name-user</p>
+                    </div>
+                    <div id="comment-user">
+                        <p style="width: 550px; height:100%;">Theo từ điển Urban Dictionary, wibu (hay weeaboo) là một thuật ngữ mang thái độ tiêu cực, dùng để chỉ những ai bị ám ảnh, phát cuồng quá mức đối với văn hóa Nhật Bản đến độ gây phiền cho người khác. Hầu hết các wibu đều không tự nhận thức được mức độ cuồng của bản thân. Một biểu hiện khác của wibu là có mong muốn được trở thành người Nhật.
+
+Ngày nay, wibu còn dùng để ám chỉ những kẻ không hiểu rõ về Nhật hay văn hóa Nhật nhưng rất thích ra vẻ, thể hiện.<br/>
+Wibu xuất phát từ đâu?
+Chính xác thì ban đầu, thuật ngữ “weeaboo” là tiếng lóng dùng để chỉ những người phương Tây bị ám ảnh bởi văn hóa Nhật, xem nền văn hóa này vượt trội hơn so với văn hóa quốc gia và các nền văn hóa khác. Tiền thân của weeaboo là Wapanese, là từ được kết hợp từ white (trắng/da trắng) hoặc wannabe (muốn trở thành) và Japanese (thuộc về Nhật Bản).
+
+Xuất hiện nhiều trên trang web 4chan vào đầu những năm 2000, Wapanese mang ý nghĩa miệt thị những người da trắng phát cuồng mọi thứ về văn hóa Nhật Bản. Khi weeaboo du nhập vào Việt Nam, từ này bị biến thể thành wibu (phát âm của weeaboo). </p>
+                    </div>                    
+                </div>
             </div>
         </div>
             
     
     </section>
+    <script>
+        function mo(){
+            document.getElementById("menu-c2").style.display="block";
+        }
+        function dong(){
+            document.getElementById("menu-c2").style.display="none";
+        }
+    </script>
 
 @endsection

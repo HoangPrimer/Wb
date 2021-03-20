@@ -21,7 +21,7 @@ section{
 nav{
     width:23%;
     background-color: #fff;
-    height:500px;
+    height:100%;
     
 }
 /*-------Menu------------------*/
@@ -85,31 +85,33 @@ ul li a{
     padding:3%;
 }
 /*-------------Thông tin bài đăng-----------------*/
-.info{
+#info{
     display:flex;
     text-align: center;
     line-height:50px;
 }
+#infomation{
+    margin-left: 10%;
+    font-size:20px;
+}
 #name-post{
-    background-color:chartreuse;
+    background-color:#fff;
     width: 100%;
     height: 20%;
-    margin-left: 25px;
+   
 }
 #info-user{
     width: 100%;
-    margin-top:47px;
-    margin-left: 25px;
-    
+    margin-top:15%;
     display:flex;
 }
 #name,#cost{
-    background-color:blue;
+    background-color:bisque;
     width: 200px;
     height: 50px;
 }
 #phone,#place{
-    background-color:red;
+    background-color:bisque;
     width: 200px;
     margin-left:60px;
     height: 50px;
@@ -118,7 +120,7 @@ ul li a{
 /*-----------Mô tả----------*/
 .description{
     width:100%;
-    height: 100%;
+   
     text-align: justify;
     line-height: 30px;
     padding-bottom:50px;
@@ -129,12 +131,38 @@ ul li a{
 /*-------------Bình Luận --------------*/
 .comment{
     width:80%;
-    height: 50px;
     background-color: coral;
     padding:3%;
+    position: relative;
+    
+}
+#user{
+    display:flex;
+}
+#user-comment{
+    margin:5% 0% 3% 9%;
+    display:grid;
+    grid-template-columns: 60px 500px ;
+    grid-template-rows: 45px 100% ;
+    text-align: justify;
+}
+#img-user{
+    grid-column: 1/2;
+}
+#name-user{
+    margin-left: 10px;
+}
+#comment-user{
+    margin-left:70px;
+   
 }
 
 
+
+
+
+
+/*----------------------------------------------------------*/
 footer{
     background-color:cadetblue;
     height:200px;

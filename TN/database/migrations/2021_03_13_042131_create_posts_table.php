@@ -14,14 +14,15 @@ class CreatePostsTable extends Migration
     public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('directory_id');
-            $table->integer('user_id');
+            $table->Increments('id');
+            $table->integer('directory_id')->unsigned();
+            $table->foreign('directory_id')->references('id')->on('directories')->onDelete('cascade');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('name_post');
             $table->string('content');
             $table->integer('price');
             $table->string('public')->default('private');
-            $table->boolean('status')->default('1');
             $table->timestamps();
         });
     }

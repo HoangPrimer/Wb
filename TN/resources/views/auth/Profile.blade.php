@@ -34,9 +34,8 @@
              <span> {{Auth::user()->gender}}</span>
          </div>
          <div class="img">
-             <button  type="submit" onclick="info()">Cập Nhật Thông Tin</button>
+             <a href=""><button  type="submit">Cập Nhật Thông Tin</button></a>
          </div>
-        
   
 </div>
    

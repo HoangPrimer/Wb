@@ -18,12 +18,14 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/admin.css')}}" rel="stylesheet" type="text/css"/>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ route('adpost') }}">
                 Home
                 </a>
                 
@@ -51,12 +53,12 @@
                             @endif
                         @else
                              <li class="nav-item">
-                             <a class="nav-link" href="{{route('pget') }}">
+                             <a class="nav-link" href="{{route('adpost')}}">
                                       List User
                                  </a>
                             </li>
                              <li class="nav-item">
-                             <a class="nav-link" href="{{route('ppost') }}">
+                             <a class="nav-link" href="{{route('directory')}}">
                                        Directory
                                  </a>
                             </li>

@@ -5,12 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <link href="../css/index.css" rel="stylesheet" type="text/css"/>
-  <link href="../css/page.css" rel="stylesheet" type="text/css"/>
-  <link href="../css/post.css" rel="stylesheet" type="text/css"/>
-  <link href="../css/profile.css" rel="stylesheet" type="text/css"/>
-  <link href="../css/drproduct.css" rel="stylesheet" type="text/css"/>
-  <link href="../css/fontawesome-free-5.15.2-web/" rel="stylesheet"/>
+  <link href="{{asset('css/index.css')}}" rel="stylesheet" type="text/css"/>
+  <link href="{{asset('css/drproduct.css')}}" rel="stylesheet" type="text/css"/>
+  <link href="{{asset('css/fontawesome-free-5.15.2-web/')}}" rel="stylesheet"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=vivaldi">
   <title>Website - SecondHannd</title>
 </head>
@@ -21,21 +18,34 @@
                  @if (Route::has('login'))
                 <div class="tab-user">
                     @auth
-                                <a href="{{ route('profile') }}">
-                                   <img src="../images/avatar/{{ Auth::user()->image }}" width="50px" height="50px" style="border-radius:50%"> 
-                                </a>
-                                <i class="fa fa-angle-double-right"></i>
-                                <div >
-                                    <a  href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Đăng xuất') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
+                    <div class="dropdown">
+                    <img src="../images/avatar/{{ Auth::user()->image }}" width="50px" height="50px" style="border-radius:50%">
+                        <div class="dropdown-content">
+                        @if(Auth::user()->is_admin == 'admin')
+                            <a  href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                {{ __('Đăng xuất') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                          @csrf
+                                      </form>
+                            <a href="{{ route('profile') }}">Trang cá nhân</a>
+                            <a href="{{ route('adpost') }}">Trang quản trị</a>
+                        @else
+                          <a  href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                {{ __('Đăng xuất') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                            <a href="{{ route('profile') }}">Trang cá nhân</a>
+                            <a href="{{ route('listpost') }}">Quản lý bài viết</a>
+                        @endif
+                        </div>
+                    </div>         
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
@@ -54,7 +64,7 @@
              </div>
           <div class="top-search">
             <div class="logo">
-              <a href=""><img src="../images/cong.png"></a>
+              <a href=""><img src="images/cong.png"></a>
             </div>
             <div class="box-searh">
                  <span class="icon"><i class="fas fa-search"></i></span>

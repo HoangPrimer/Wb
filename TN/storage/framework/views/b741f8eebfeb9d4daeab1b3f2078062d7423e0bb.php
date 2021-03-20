@@ -18,12 +18,14 @@
 
     <!-- Styles -->
     <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('css/admin.css')); ?>" rel="stylesheet" type="text/css"/>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="<?php echo e(url('/')); ?>">
+                <a class="navbar-brand" href="<?php echo e(route('adpost')); ?>">
                 Home
                 </a>
                 
@@ -51,12 +53,12 @@
                             <?php endif; ?>
                         <?php else: ?>
                              <li class="nav-item">
-                             <a class="nav-link" href="<?php echo e(route('pget')); ?>">
+                             <a class="nav-link" href="<?php echo e(route('adpost')); ?>">
                                       List User
                                  </a>
                             </li>
                              <li class="nav-item">
-                             <a class="nav-link" href="<?php echo e(route('ppost')); ?>">
+                             <a class="nav-link" href="<?php echo e(route('directory')); ?>">
                                        Directory
                                  </a>
                             </li>

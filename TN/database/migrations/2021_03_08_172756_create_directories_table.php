@@ -14,7 +14,7 @@ class CreateDirectoriesTable extends Migration
     public function up()
     {
         Schema::create('directories', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->Increments('id');
             $table->string('name_directory');
             $table->string('category');
             $table->timestamps();

@@ -27,19 +27,38 @@ Route::get('/drproduct', function (){
 
 
 //them danhmuc
-Route::group(['prefix'=>'home'], function()
+Route::group(['prefix'=>'profile'], function()
 {
-        Route::get('post',[
-                'as'=>'createpost',
-                'uses'=>'PostController@getpost'
-        ]);
+        Route::group(['prefix'=>'post'], function(){
+           
+                Route::get('create', [
+                         'as'=>'createpost',
+                         'uses'=>'ProfileController@createpost'
+                ]);
 
-        Route::post('post/create',[
-                'as'=>'addpost',
-                'uses'=>'PostController@postpost'
-        ]);
+                Route::post('post',[
+                        'as'=>'addpost',
+                        'uses'=>'ProfileController@postpost'
+                ]);
+
+                Route::get('list', [
+                        'as'=>'listpost',
+                        'uses'=>'ProfileController@viewlistpost'
+               ]);
+
+               Route::get('delete/{id}',[
+                'as'=>'deletepost',
+                'uses'=>'ProfileController@deletepost'
+                ]);
+
+                Route::get('edit/{id}', [
+                        'as'=>'editpost',
+                        'uses'=>'ProfileController@vieweditpost'
+                ]);
+        });
+
         
-        Route::get('profile',[
+        Route::get('info',[
                 'as'=>'profile',
                 'uses'=>'ProfileController@create'
         ]);
@@ -49,13 +68,41 @@ Route::group(['prefix'=>'home'], function()
                 'uses'=>'ProfileController@update'
         ]);
 });
-Route::get('directory/create', 'DirectoryController@create')->name('dcreate');
 
-Route::post('directory/store', 'DirectoryController@store')->name('dstore');
+Route::group(['prefix'=>'admin'], function()
+{
+        Route::group(['prefix'=>'directory'], function()
+        {
+            Route::get('list', [
+                'as'=>'directory',
+                'uses'=>'AdminController@viewdirectory'
+        ]);
 
-//admin
+            Route::get('add', [
+                'as'=>'adddirectory',
+                'uses'=>'AdminController@viewadddirectory'
+        ]);
 
-Route::get('homeadmin',[
-        'as'=>'admin/home/index',
-        'uses'=>'AdminController@index'
-    ]);
+            Route::get('edit/{id}', [
+                'as'=>'editdirectory',
+                'uses'=>'AdminController@vieweditdirectory'
+        ]);
+
+            Route::post('addirectory', [
+                'as'=>'postdirectory',
+                'uses'=>'AdminController@adddirectory'
+        ]);
+        });
+
+            Route::get('post', [
+                'as'=>'adpost',
+                'uses'=>'AdminController@viewPost'
+        ]);
+       
+
+});
+
+
+
+
+  

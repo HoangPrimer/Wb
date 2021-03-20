@@ -23,41 +23,67 @@ body{
     background-color:#3fb7f3;
     float: left;
     line-height: 90px;
+    padding-left: 413px;
+    padding-right: 500px;
 }
 .header .top-bar .tab-user{
     width: 15%;
     float: left;
     height: 90px;
-    margin-left: 333px;
     font-size: 20px;
 }
 .header .top-bar .tab-user a{
     text-decoration: none;
-    float: left;
-    height: 90px;
-    margin-left: 20px;
-}
-.header .top-bar .tab-user a img{
-    margin-top: 20px;
-  
-}
-.header .top-bar .tab-user i{
-    margin-left: 20px;
-    float: left;
-    font-size: 20px;
-    margin-top: 37px;
+    margin-right: 10px;
 }
 .header .top-bar .tab-user a:hover{
-    color: #2b8fff;
+    color: burlywood;
 }
-.header .top-bar .tab-user a:active{
-    color: #ee1e1e;
-}
-.header .top-bar .menu-bar{ width: 20%;
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    padding-top: 20px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+    border-bottom: rgb(194, 175, 175) solid 1px;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.header .top-bar .menu-bar{
+     width: 400px;
     float: right;
     height: 90px;
     font-size: 20px;
-margin-right: 400px;}
+}
 
  .header .top-bar .menu-bar a{
      text-decoration: none;
@@ -217,16 +243,19 @@ float: right;
     width: 100%;
     margin: auto;
     display: block;
-    background-color: #0bc2e2;
+    background-color: #f3f9fa;
     float: left;
     margin-top: 20px;
     padding-bottom: 15px;
 }
 .producttt .title{
-    width: 95%;
+    width: 100%;
     height: 50px;
     line-height: 50px;
     margin:auto;
+    background-color: darkgoldenrod;
+    border: darkgray 1px solid;
+    padding-left: 50px;
 }
 
 .colum-d3{
@@ -273,7 +302,7 @@ float: right;
     width: 1000px;
     height: 1200px;
     margin: auto;
-    background-color: rgb(53, 246, 36);
+    background-color: rgb(251, 201, 107);
 }
 .mid .mid-title{
     width: 1000px;
@@ -372,7 +401,7 @@ float: right;
     margin:auto;
     border-bottom: 2px  solid rgb(7, 236, 121);
     margin-top: 10px;
-    padding-top: 40px;
+    padding-top: 30px;
 }
  .img button{
     width: 500px;
@@ -386,5 +415,89 @@ float: right;
     
 }
 
+/* bai viet ca nhan*/
+.listdirectory{
+    width: 100%;
+    clear: right;
+    padding: 30px 30px 30px 50px;
+}
+.title{
+    width: 100%;
+    height: 100px;
+    color: rgb(100, 45, 25);
+    background-color: rgba(240, 217, 217, 0.856);
+}
+.title-left{
+    height: 100px;
+    width: 500px;
+    text-align: center;
+     padding-top: 30px;
+    float: left;
+    font-size: 30px;
+}
+.title-right{
+    height: 100px;
+    width: 500px;
+    padding-top: 30px;
+    float: right;
+    font-size: 25px;
+}
+.title-right ul{
+    width: 100%;
+}
+.title-right ul li{
+    margin-right: 20px;
+    background-color: rgb(250, 244, 237);
+    border: 1px solid tan;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.title-right ul li a{
+    text-decoration: none;
+}
+.title-right ul li a i{
+    margin-right: 5px;
+    border-right: 1px solid black;
+    width: 35px;
+    text-align: center;
+}
+.wiget{
+    width: 100%; 
+    margin: auto;
+}
+.wiget-title{
+    width: 100%;
+    height: 50px;
+    background-color: blanchedalmond;
+    line-height: 50px;
+    padding-right: 30px;
+    font-size: 25px;
+    border: 1px solid rgb(188, 238, 213);
+}
+.wiget-title p{
+    float:right;
+}
 
-
+.wiget-body{
+    width: 100%;
+    background-color: rgb(245, 243, 240);
+    border: 1px solid rgb(188, 238, 213);
+}
+table {
+    width:100% ;
+}
+tr{
+    height: 30px;
+    border: 1px solid rgb(188, 238, 213);
+}
+td{
+    text-align: center;
+    font-size: 20px;
+    border: 1px solid rgb(188, 238, 213);
+    
+}
+td img{
+    width: 220px;
+    height: 220px;
+}

@@ -5,12 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <link href="../css/index.css" rel="stylesheet" type="text/css"/>
-  <link href="../css/page.css" rel="stylesheet" type="text/css"/>
-  <link href="../css/post.css" rel="stylesheet" type="text/css"/>
-  <link href="../css/profile.css" rel="stylesheet" type="text/css"/>
-  <link href="../css/drproduct.css" rel="stylesheet" type="text/css"/>
-  <link href="../css/fontawesome-free-5.15.2-web/" rel="stylesheet"/>
+  <link href="<?php echo e(asset('css/index.css')); ?>" rel="stylesheet" type="text/css"/>
+  <link href="<?php echo e(asset('css/drproduct.css')); ?>" rel="stylesheet" type="text/css"/>
+  <link href="<?php echo e(asset('css/fontawesome-free-5.15.2-web/')); ?>" rel="stylesheet"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=vivaldi">
   <title>Website - SecondHannd</title>
 </head>
@@ -21,22 +18,36 @@
                  <?php if(Route::has('login')): ?>
                 <div class="tab-user">
                     <?php if(auth()->guard()->check()): ?>
-                                <a href="<?php echo e(route('profile')); ?>">
-                                   <img src="../images/avatar/<?php echo e(Auth::user()->image); ?>" width="50px" height="50px" style="border-radius:50%"> 
-                                </a>
-                                <i class="fa fa-angle-double-right"></i>
-                                <div >
-                                    <a  href="<?php echo e(route('logout')); ?>"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        <?php echo e(__('Đăng xuất')); ?>
+                    <div class="dropdown">
+                    <img src="../images/avatar/<?php echo e(Auth::user()->image); ?>" width="50px" height="50px" style="border-radius:50%">
+                        <div class="dropdown-content">
+                        <?php if(Auth::user()->is_admin == 'admin'): ?>
+                            <a  href="<?php echo e(route('logout')); ?>"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                <?php echo e(__('Đăng xuất')); ?>
 
-                                    </a>
+                            </a>
+                            <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+                                          <?php echo csrf_field(); ?>
+                                      </form>
+                            <a href="<?php echo e(route('profile')); ?>">Trang cá nhân</a>
+                            <a href="<?php echo e(route('adpost')); ?>">Trang quản trị</a>
+                        <?php else: ?>
+                          <a  href="<?php echo e(route('logout')); ?>"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                <?php echo e(__('Đăng xuất')); ?>
 
-                                    <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
-                                        <?php echo csrf_field(); ?>
-                                    </form>
-                                </div>
+                            </a>
+                            <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+                                <?php echo csrf_field(); ?>
+                            </form>
+                            <a href="<?php echo e(route('profile')); ?>">Trang cá nhân</a>
+                            <a href="<?php echo e(route('listpost')); ?>">Quản lý bài viết</a>
+                        <?php endif; ?>
+                        </div>
+                    </div>         
                     <?php else: ?>
                         <a href="<?php echo e(route('login')); ?>">Login</a>
 
@@ -55,7 +66,7 @@
              </div>
           <div class="top-search">
             <div class="logo">
-              <a href=""><img src="../images/cong.png"></a>
+              <a href=""><img src="images/cong.png"></a>
             </div>
             <div class="box-searh">
                  <span class="icon"><i class="fas fa-search"></i></span>

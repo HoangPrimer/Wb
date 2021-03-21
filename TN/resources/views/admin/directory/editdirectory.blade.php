@@ -28,7 +28,7 @@
                         <p>Edit :)) </p>
                 </div>
                         <div class="wiget-bodi">
-                        <form action="{{ route('postdirectory')}}" method="post">
+                        <form action="{{ route('updatedirectory', ['id'=> $dr->id])}}" method="post">
                         
                         @if(count($errors)>0)   
                           <div class="alert alert-danger">
@@ -46,7 +46,7 @@
                                 <label for="tendanhmuc">Tên danh mục </label>     
                                 <label for="loaidanhmuc">Loại danh mục</label><br>
                                 <input class="ip" type="text" name="tendm" value="{{$dr->name_directory}}">
-                                <span class="ip">{{$dr->category}}</span><br><br>
+                                <span class="ip">{{$dr->category}}{{$dr->id}}</span><br><br>
                                 <label for="loaidanhmuc"> Chọn loại danh mục</label><br>
                                 <select  class="ip" name="loaidm" >
                                         <option value="Đồ điện tử">Đồ điện tử</option>

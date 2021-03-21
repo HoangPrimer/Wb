@@ -55,6 +55,8 @@ Route::group(['prefix'=>'profile'], function()
                         'as'=>'editpost',
                         'uses'=>'ProfileController@vieweditpost'
                 ]);
+
+               
         });
 
         
@@ -87,18 +89,45 @@ Route::group(['prefix'=>'admin'], function()
                 'as'=>'editdirectory',
                 'uses'=>'AdminController@vieweditdirectory'
         ]);
-
+           Route::get('delete/{id}',[
+                'as'=>'deldirectory',
+                'uses'=>'AdminController@deldirectory'
+        ]);
+        
             Route::post('addirectory', [
                 'as'=>'postdirectory',
                 'uses'=>'AdminController@adddirectory'
         ]);
+           Route::post('update/{id}', [
+                'as'=>'updatedirectory',
+                'uses'=>'AdminController@updatedirectory'
+        ]);
         });
 
-            Route::get('post', [
+        Route::group(['prefix'=>'post'], function(){
+            Route::get('list', [
                 'as'=>'adpost',
                 'uses'=>'AdminController@viewPost'
         ]);
-       
+
+                
+           Route::get('delete/{id}',[
+                'as'=>'addeletepost',
+                'uses'=>'AdminController@deletepost'
+                ]);
+
+            Route::get('duyetbai/{id}', [
+                'as'=>'duyetbai',
+                'uses'=>'AdminController@duyetbai'
+                ]);
+        });
+
+        Route::group(['prefix'=>'user'], function(){
+                Route::get('list', [
+                        'as'=>'listuser',
+                        'uses'=>'AdminController@listuser'
+                ]);
+        });
 
 });
 

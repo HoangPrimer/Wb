@@ -53,7 +53,7 @@
                             <?php endif; ?>
                         <?php else: ?>
                              <li class="nav-item">
-                             <a class="nav-link" href="<?php echo e(route('adpost')); ?>">
+                             <a class="nav-link" href="<?php echo e(route('listuser')); ?>">
                                       List User
                                  </a>
                             </li>

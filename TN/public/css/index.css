@@ -185,7 +185,9 @@ body{
     font-size: 50px;
     color: #f5903e;
 }
-
+.mainnn{
+    min-height: 700px;
+}
 /* noi dung trong trang*/
 
 .main{width: 1116px;

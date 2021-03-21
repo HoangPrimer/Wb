@@ -7,12 +7,15 @@ use App\User;
 use App\Directory;
 use App\Post;
 use App\Image;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
-    public function __construct()
+    private $directory;
+    public function __construct(Directory $directory)
     {
+        $this->directory = $directory;
         $this->middleware('auth');
         $this->middleware('isAdmin');
     }
@@ -51,35 +54,55 @@ class AdminController extends Controller
         return view('admin.home',compact('post'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    
+
+    public function duyetbai($id)
     {
-        //
+        $dr = Post::find($id);
+        if($dr->public == 'private')
+        {
+            $dr->public ='public';
+            $dr->save();
+        }
+       
+        return  redirect()->action('AdminController@viewPost');
+    }
+    public function deletepost($id){
+        $del = Post::find($id);
+        $del->delete();
+
+        return  redirect()->action('AdminController@viewPost');
+    }
+    public function deldirectory($id){
+        $del = Directory::find($id);
+        $del->delete();
+
+        return  redirect()->action('AdminController@viewdirectory')->with('message','Xóa Thành Công');;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function updatedirectory(Request $request, $id)
     {
-        //
+        // $update = Directory::find($id);
+        // $update->name_directory = $request->tendm;
+        // $update->category = $request->loaidm;
+   
+        // $update->save();
+        $update = $this->directory->find($id)->update([
+            'name_directory' => $request->tendm,
+            'category' =>  $request->loaidm
+        ]);
+        
+
+           return redirect()->action('AdminController@viewdirectory')->with('message','Sửa Thành Công');
+       
+       
+    }
+    public function listuser()
+    {
+        $u = DB::table('users')->get();
+        return view('admin.user.list',compact('u'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //

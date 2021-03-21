@@ -53,7 +53,7 @@
                             @endif
                         @else
                              <li class="nav-item">
-                             <a class="nav-link" href="{{route('adpost')}}">
+                             <a class="nav-link" href="{{route('listuser')}}">
                                       List User
                                  </a>
                             </li>

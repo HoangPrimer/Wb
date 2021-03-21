@@ -24,6 +24,19 @@
                         </ul>
                 </div>
                 </div>
+                @if(count($errors)>0)   
+                          <div class="alert alert-danger">
+                              @foreach($errors->all() as $err)
+                                  {{ $err }}<br>
+                              @endforeach
+                          </div>            
+                      @endif
+                
+                      @if(session('message'))
+                          <div class="alert alert-success">
+                              {{ session('message') }}
+                          </div>
+                      @endif
                 <div class="wiget">
                         <div class="wiget-title">
                                 <p>Số Lượng : {{count($direc)}}</p>
@@ -41,7 +54,7 @@
                                         <td >{{ $dt -> id }}</td>
                                         <td >{{ $dt -> name_directory }}</td>
                                         <td >{{ $dt -> category }}</td>
-                                        <td ><a href="#"><i class="fas fa-trash"></i></a></td>
+                                        <td ><a href="/admin/directory/delete/{{$dt->id}}"><i class="fas fa-trash"></i></a></td>
                                         <td ><a href="/admin/directory/edit/{{$dt->id}}"><i class="fas fa-edit"></i></a></td>
                                 </tr>
                                 @endforeach

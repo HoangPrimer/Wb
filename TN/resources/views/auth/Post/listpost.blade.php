@@ -31,26 +31,26 @@
                                 <tr>
                                         <td  style="color: rgb(5, 172, 32); width:100px;">ID</td>
                                         <td  style="color: rgb(5, 172, 32); width:200px;">Tiêu Đề</td>
-                                        <td  style="color: rgb(5, 172, 32); width:400px;">Nội Dung</td>
+                                        <td  style="color: rgb(5, 172, 32); width:480px;">Nội Dung</td>
                                         <td  colspan="3" style="color: rgb(5, 172, 32); width:699px;">Ảnh</td>
                                         <td  style="color: rgb(5, 172, 32); width:120px;">Trạng Thái</td>
-                                        <td  colspan="2" style="color: rgb(5, 172, 32);">Hành Động</td>
+                                        <td  colspan="2" style="color: rgb(5, 172, 32);width:160px;">Hành Động</td>
                                 </tr>
                                 @foreach( $a as $dt)
                                 <tr>
-                                        <td >{{ $dt -> id }}</td>
-                                        <td >{{ $dt -> name_post }}</td>
-                                        <td >{{ $dt -> content }}</td>
-                                        <td style="width:233px;"> <img src="../images/anhhang/{{ DB::table('images')->where('post_id', $dt->id)->value('name')}}"> </td>
-                                        <td style="width:233px;"> <img src="../images/anhhang/{{ DB::table('images')->where('post_id', $dt->id)->value('name')}}"> </td>
-                                        <td style="width:233px;"> <img src="../images/anhhang/{{ DB::table('images')->where('post_id', $dt->id)->value('name')}}"> </td>
+                                        <td style="width:100px;">{{ $dt -> id }}</td>
+                                        <td style="width:200px;">{{ $dt -> name_post }}</td>
+                                        <td style="width:480px;">{{ $dt -> content }}</td>
+                                        @foreach($dt->image as $img)
+                                        <td style="width:233px;"> <img src="/images/anhhang/{{$img->name}}"> </td>
+                                        @endforeach
                                         @if($dt -> public == 'private')
-                                        <td style="color: red;" >Chưa Duyệt</td>
+                                        <td style="color: red;width:120px;" >Chưa Duyệt</td>
                                              
-                                        <td ><a href="/profile/post/delete/{{$dt -> id }}"><i class="fas fa-trash"></i></a></td>
-                                        <td ><a href="/profile/post/edit/{{$dt -> id }}"><i class="fas fa-edit"></i></a></td>
+                                        <td style="width:60px;"><a href="/profile/post/delete/{{$dt -> id }}"><i class="fas fa-trash"></i></a></td>
+                                        <td style="width:100px;"><a href="/profile/post/edit/{{$dt -> id }}"><i class="fas fa-edit"></i></a></td>
                                         @else
-                                            <td style="color: blue;">Đã Được Duyệt</td>
+                                            <td style="color: blue;width:120px;">Đã Được  Duyệt</td>
                                             <td colspan="2"><a href="/profile/post/delete/{{$dt -> id }}" ><i class="fas fa-trash"></i></a></td>
                                         @endif
                                 </tr>

@@ -120,7 +120,7 @@ class ProfileController extends Controller
              }
          }
           
-         return  redirect()->action('ProfileController@createpost');
+         return  redirect()->route('listpost');
     }
 
     public function deletepost($id){

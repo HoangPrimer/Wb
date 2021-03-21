@@ -19,7 +19,7 @@
                 <div class="tab-user">
                     <?php if(auth()->guard()->check()): ?>
                     <div class="dropdown">
-                    <img src="../images/avatar/<?php echo e(Auth::user()->image); ?>" width="50px" height="50px" style="border-radius:50%">
+                    <img src="/images/avatar/<?php echo e(Auth::user()->image); ?>" width="50px" height="50px" style="border-radius:50%">
                         <div class="dropdown-content">
                         <?php if(Auth::user()->is_admin == 'admin'): ?>
                             <a  href="<?php echo e(route('logout')); ?>"
@@ -66,7 +66,7 @@
              </div>
           <div class="top-search">
             <div class="logo">
-              <a href=""><img src="images/cong.png"></a>
+              <a href=""><img src="/images/cong.png"></a>
             </div>
             <div class="box-searh">
                  <span class="icon"><i class="fas fa-search"></i></span>

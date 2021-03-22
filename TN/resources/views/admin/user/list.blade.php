@@ -5,7 +5,7 @@
 <div class="listdirectory">
         <div class="title">
                 <div class="title-left">
-                        <h1>Quản Lý Danh Mục</h1>
+                        <h1>Quản Lý Người Dùng</h1>
                 </div>
                 <div class="title-right">
                         <ul>
@@ -51,6 +51,9 @@
                                 </tr>
                                 @endforeach
                         </table>
+                        <div class="x">
+                        {{$u->links()}}
+                        </div>
                         </div>
                 </div>
 </div>

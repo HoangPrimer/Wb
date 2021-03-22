@@ -62,12 +62,15 @@ Route::group(['prefix'=>'profile'], function()
         
         Route::get('info',[
                 'as'=>'profile',
-                'uses'=>'ProfileController@create'
+                'uses'=>'ProfileController@viewprofile'
         ]);
-        
-        Route::post('profile/update/{id}',[
+        Route::get('edit/{id}',[
+                'as'=>'editprofile',
+                'uses'=>'ProfileController@vieweditprofile'
+        ]);
+        Route::post('update/{id}',[
                 'as'=>'updateprofile',
-                'uses'=>'ProfileController@update'
+                'uses'=>'ProfileController@updateprofile'
         ]);
 });
 

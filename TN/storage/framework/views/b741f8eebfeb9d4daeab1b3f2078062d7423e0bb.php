@@ -19,7 +19,7 @@
     <!-- Styles -->
     <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
     <link href="<?php echo e(asset('css/admin.css')); ?>" rel="stylesheet" type="text/css"/>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="/fontawesome-free-5.15.2-web/css/all.css" rel="stylesheet"> 
 </head>
 <body>
     <div id="app">

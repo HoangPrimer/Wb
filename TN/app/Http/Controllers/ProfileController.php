@@ -26,18 +26,17 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function viewprofile()
     {
         
-        return view('auth\Profile');
+        return view('auth.Profile.Profile');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    public function vieweditprofile($id)
+    {
+        $pro = User::find($id)->get();
+        return view('auth.Profile.editprofile',compact('pro'));
+    }
+    
     public function store(Request $request)
     {
         //
@@ -62,15 +61,20 @@ class ProfileController extends Controller
 
     public function updateprofile(Request $request, $id)
     {
+        $data = $request->validate([
+            'avatar' => 'bail|image',
+           
+        ],
+        
+    );
         $update = User::find($id);
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
+        if ($request->hasFile('avatar')) {
+            $file = $request->file('avatar');
             $name =$file->getClientOriginalName();
             $file->move("images/avatar", $name);
             $update->image = $file->getClientOriginalName();
         }
         
-        $update->email = $request->email;
         $update->name = $request->name;
         $update->address = $request->address;
         $update->phone = $request->phone;
@@ -78,7 +82,7 @@ class ProfileController extends Controller
         $update->gender = $request->gender;
       
         $update->save();
-           return redirect()->action('ProfileController@create');
+           return redirect()->action('ProfileController@viewprofile')->with('message','Đã cập nhật thành công');
        
        
     }
@@ -86,7 +90,7 @@ class ProfileController extends Controller
     //quan ly ca nhan
     public function viewlistpost()
     {
-        $a = Post::with('image')->get();
+        $a = Post::with('image')->where('user_id',Auth::id())->paginate(4);
         return view('auth.Post.listpost',compact('a'));
         
     }
@@ -120,14 +124,14 @@ class ProfileController extends Controller
              }
          }
           
-         return  redirect()->route('listpost');
+         return  redirect()->route('createpost');
     }
 
     public function deletepost($id){
         $del = Post::find($id);
         $del->delete();
 
-        return  redirect()->action('ProfileController@viewlistpost');
+        return  redirect()->action('ProfileController@viewlistpost')->with('message','Đã Xóa Bài Viết');
     }
 
     public function vieweditpost($id) {

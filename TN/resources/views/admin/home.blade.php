@@ -23,6 +23,20 @@
                    </ul>
             </div>
             </div>
+             
+            @if(count($errors)>0)   
+                          <div class="alert alert-danger">
+                              @foreach($errors->all() as $err)
+                                  {{ $err }}<br>
+                              @endforeach
+                          </div>            
+                      @endif
+                      @CSRF  
+                      @if(session('message'))
+                          <div class="alert alert-success">
+                              {{ session('message') }}
+                          </div>
+                      @endif
             <div class="cont">
                 <div class="wiget-title">
                         <p>Số Lượng : {{count($post)}}</p>
@@ -54,12 +68,15 @@
                                         <td style=" width:90px;"><a href="/admin/post/duyetbai/{{$dt -> id }}">Duyệt</i></a></td>
                                         @else
                                             <td style="color: blue;">Đã Được Duyệt</td>
-                                            <td colspan="2" style=" width:100px;"><a href="/profile/post/delete/{{$dt -> id }}" ><i class="fas fa-trash"></i></a></td>
+                                            <td colspan="2" style=" width:100px;"><a href="/admin/post/delete/{{$dt -> id }}" ><i class="fas fa-trash"></i></a></td>
                                         @endif
                                         
                                 </tr>
                                 @endforeach
                         </table>
+                        <div class="x">
+                        {{$post->links()}}
+                        </div>
                         </div>
             </div>
 </div>

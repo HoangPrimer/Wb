@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link href="/fontawesome-free-5.15.2-web/css/all.css" rel="stylesheet"> 
   <link href="{{asset('css/index.css')}}" rel="stylesheet" type="text/css"/>
   <link href="{{asset('css/drproduct.css')}}" rel="stylesheet" type="text/css"/>
-  <link href="{{asset('css/fontawesome-free-5.15.2-web/')}}" rel="stylesheet"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=vivaldi">
   <title>Website - SecondHannd</title>
 </head>
 <body>
     <div class="all">
+   
        <div class="header">
              <div class="top-bar">
                  @if (Route::has('login'))

@@ -46,7 +46,7 @@
                                 <label for="tendanhmuc">Tên danh mục </label>     
                                 <label for="loaidanhmuc">Loại danh mục</label><br>
                                 <input class="ip" type="text" name="tendm" value="{{$dr->name_directory}}">
-                                <span class="ip">{{$dr->category}}{{$dr->id}}</span><br><br>
+                                <span class="ip">{{$dr->category}}</span><br><br>
                                 <label for="loaidanhmuc"> Chọn loại danh mục</label><br>
                                 <select  class="ip" name="loaidm" >
                                         <option value="Đồ điện tử">Đồ điện tử</option>

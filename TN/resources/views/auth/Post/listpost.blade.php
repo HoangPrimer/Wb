@@ -1,5 +1,6 @@
 @extends('layouts.layoutwb')
 @section('content')
+
 <div class="listdirectory">
         <div class="title">
                 <div class="title-left">
@@ -26,6 +27,20 @@
                         <div class="wiget-title">
                                 <p>Số Lượng : {{count($a)}}</p>
                         </div>
+                        
+                @if(count($errors)>0)   
+                          <div class="alert">
+                              @foreach($errors->all() as $err)
+                                  {{ $err }}<br>
+                              @endforeach
+                          </div>            
+                @endif
+                     
+                @if(session('message'))
+                          <div class="alert">
+                              {{ session('message') }}
+                          </div>
+                @endif
                         <div class="wiget-body">
                         <table>
                                 <tr>
@@ -45,7 +60,7 @@
                                         <td style="width:233px;"> <img src="/images/anhhang/{{$img->name}}"> </td>
                                         @endforeach
                                         @if($dt -> public == 'private')
-                                        <td style="color: red;width:120px;" >Chưa Duyệt</td>
+                                        <td style="color: red;width:120px;" >Chờ Xét Duyệt</td>
                                              
                                         <td style="width:60px;"><a href="/profile/post/delete/{{$dt -> id }}"><i class="fas fa-trash"></i></a></td>
                                         <td style="width:100px;"><a href="/profile/post/edit/{{$dt -> id }}"><i class="fas fa-edit"></i></a></td>
@@ -55,8 +70,12 @@
                                         @endif
                                 </tr>
                                 @endforeach
+                               
+                                      
                         </table>
                         </div>
+                        {{$a->links()}}
+                       
                 </div>
 </div>
 

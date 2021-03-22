@@ -34,7 +34,16 @@ class AdminController extends Controller
     }
     public function adddirectory(Request $request)
     {
-        //
+        $data = $request->validate([
+            'tendm' => 'bail|required|min:3|max:25',
+            'loaidm' => 'required',
+        ],
+        [
+                'tendm.required'=>'Tên không được để trống',
+                'tendm.min'=>'Tên tối thiểu 3 ký tự',
+                'tendm.max'=>'Tên tối đa 25 ký tự',
+        ]
+    );
         $new = new Directory;
         $new->name_directory = $request->tendm;
         $new->category = $request->loaidm;
@@ -50,7 +59,7 @@ class AdminController extends Controller
     }
     public function viewPost()
     {
-        $post = Post::with('image')->get();
+        $post = Post::with('image')->paginate(5);
         return view('admin.home',compact('post'));
     }
 
@@ -65,13 +74,13 @@ class AdminController extends Controller
             $dr->save();
         }
        
-        return  redirect()->action('AdminController@viewPost');
+        return  redirect()->action('AdminController@viewPost')->with('message','Đã Duyệt Bài Viết');
     }
     public function deletepost($id){
         $del = Post::find($id);
         $del->delete();
 
-        return  redirect()->action('AdminController@viewPost');
+        return  redirect()->action('AdminController@viewPost')->with('message','Đã Xóa Bài Viết');
     }
     public function deldirectory($id){
         $del = Directory::find($id);
@@ -82,11 +91,17 @@ class AdminController extends Controller
 
     public function updatedirectory(Request $request, $id)
     {
-        // $update = Directory::find($id);
-        // $update->name_directory = $request->tendm;
-        // $update->category = $request->loaidm;
-   
-        // $update->save();
+        $data = $request->validate([
+            'tendm' => 'bail|required|alpha|min:3|max:25',
+            'loaidm' => 'required',
+        ],
+        [
+                'tendm.required'=>'Tên không được để trống',
+                'tendm.min'=>'Tên tối thiểu 3 ký tự',
+                'tendm.max'=>'Tên tối đa 25 ký tự',
+                'tendm.alpha'=>'Tên chỉ chấp nhận chữ'
+        ]
+    );
         $update = $this->directory->find($id)->update([
             'name_directory' => $request->tendm,
             'category' =>  $request->loaidm
@@ -95,11 +110,10 @@ class AdminController extends Controller
 
            return redirect()->action('AdminController@viewdirectory')->with('message','Sửa Thành Công');
        
-       
     }
     public function listuser()
     {
-        $u = DB::table('users')->get();
+        $u = DB::table('users')->paginate(15);
         return view('admin.user.list',compact('u'));
     }
 

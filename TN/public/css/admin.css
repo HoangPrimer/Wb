@@ -138,7 +138,7 @@ td img{
     width: 100%;
     background-color: rgb(245, 243, 240);
     border: 1px solid rgb(188, 238, 213);
-    padding: 20px 0px 20px 50px;
+    padding: 20px 30px 20px 50px;
 }
 .wiget-bodi label{
     font-size: 20px;
@@ -159,4 +159,24 @@ td img{
     background-color: cornflowerblue;
     border: cyan 1px solid;
     margin-right: 100px;
+}
+
+
+.x nav{
+    width: 100%;
+    height: 50px;
+}
+.x nav .pagination{   
+          display: flex; 
+        width: 100%;    
+}
+.x nav page-item{
+    height: 50px;
+    line-height: 50px;
+    margin: auto;
+    
+}
+.x nav ul li{
+    border: 1px solid rgb(219, 246, 233);
+    background-color: rgb(246, 241, 232);
 }

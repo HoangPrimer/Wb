@@ -35,17 +35,19 @@ class AdminController extends Controller
     public function adddirectory(Request $request)
     {
         $data = $request->validate([
-            'tendm' => 'bail|required|min:3|max:25',
+            'name_directory' => 'bail|required|unique:directories|alpha|min:3|max:25',
             'loaidm' => 'required',
         ],
         [
-                'tendm.required'=>'Tên không được để trống',
-                'tendm.min'=>'Tên tối thiểu 3 ký tự',
-                'tendm.max'=>'Tên tối đa 25 ký tự',
+                'name_directory.required'=>'Tên không được để trống',
+                'name_directory.min'=>'Tên tối thiểu 3 ký tự',
+                'name_directory.max'=>'Tên tối đa 25 ký tự',
+                'name_directory.unique'=>'Tên đã tồn tại',
+                'name_directory.alpha'=>'Tên không chấp nhận chữ',
         ]
     );
         $new = new Directory;
-        $new->name_directory = $request->tendm;
+        $new->name_directory = $request->name_directory;
         $new->category = $request->loaidm;
         $new->save();
 
@@ -92,14 +94,13 @@ class AdminController extends Controller
     public function updatedirectory(Request $request, $id)
     {
         $data = $request->validate([
-            'tendm' => 'bail|required|alpha|unique:directories|min:3|max:25',
+            'tendm' => 'bail|required|min:3|max:25',
             'loaidm' => 'required',
         ],
         [
                 'tendm.required'=>'Tên không được để trống',
                 'tendm.min'=>'Tên tối thiểu 3 ký tự',
                 'tendm.max'=>'Tên tối đa 25 ký tự',
-                'tendm.alpha'=>'Tên chỉ chấp nhận chữ'
         ]
     );
         $update = $this->directory->find($id)->update([
@@ -115,6 +116,12 @@ class AdminController extends Controller
     {
         $u = DB::table('users')->paginate(15);
         return view('admin.user.list',compact('u'));
+    }
+    public function deleteuser($id){
+        $del = User::find($id);
+        $del->delete();
+
+        return  redirect()->action('AdminController@listuser')->with('message','Đã Xóa Người Dùng');
     }
 
     public function update(Request $request, $id)

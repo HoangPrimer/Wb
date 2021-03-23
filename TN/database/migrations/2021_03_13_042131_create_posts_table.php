@@ -20,7 +20,7 @@ class CreatePostsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('name_post');
-            $table->string('content');
+            $table->longText('content');
             $table->integer('price');
             $table->string('public')->default('private');
             $table->timestamps();

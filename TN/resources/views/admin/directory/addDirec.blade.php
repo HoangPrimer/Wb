@@ -45,7 +45,7 @@
                           </div>
                       @endif
                                 <label for="tendanhmuc">Tên danh mục</label><br>
-                                <input class="ip" type="text" name="tendm"><br><br>
+                                <input class="ip" type="text" name="name_directory"><br><br>
                                 <label for="loaidanhmuc">Loại danh mục</label><br>
                                 <select  class="ip" name="loaidm">
                                         <option value="Đồ điện tử">Đồ điện tử</option>

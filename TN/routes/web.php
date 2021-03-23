@@ -130,6 +130,12 @@ Route::group(['prefix'=>'admin'], function()
                         'as'=>'listuser',
                         'uses'=>'AdminController@listuser'
                 ]);
+
+                     
+           Route::get('delete/{id}',[
+                'as'=>'deleteuser',
+                'uses'=>'AdminController@deleteuser'
+                ]);
         });
 
 });

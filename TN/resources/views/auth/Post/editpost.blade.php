@@ -3,7 +3,7 @@
  
 <div class="mid">
         <div class="mid-title">
-                <h1>Đăng Tin Bán Sản Phẩm</h1>
+                <h1>Sửa Tin Bán Sản Phẩm</h1>
         </div>
         <div class="mid-content">
             <form class="mct-form" action="{{route('addpost')}}" method="post" enctype="multipart/form-data">
@@ -40,7 +40,7 @@
                             <p>Giá</p>
                         </div>
                         <div class="inp">
-                            <input class="asd" type="text" name="price" value="{{$p->name_post}}" required><span>VND</span>
+                            <input class="asd" type="text" name="price" value="{{$p->price}}" required><span>VND</span>
                         </div>
                      </div>
                      <div class="tit"> 

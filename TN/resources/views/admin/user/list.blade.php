@@ -18,7 +18,13 @@
                         </li>
                         </ul>
                 </div>
-                </div>
+        </div>
+        
+        @if(session('message'))
+                          <div class="alert alert-success">
+                              {{ session('message') }}
+                          </div>
+                      @endif
                 <div class="wiget">
                         <div class="wiget-title">
                                 <p>Số Lượng : {{ count($u)}}</p>
@@ -46,8 +52,8 @@
                                         <td >{{ $dt -> gender }}</td>
                                         <td >{{ $dt -> date_of_birth }}</td>
                                         <td >{{ $dt -> is_admin }}</td>
-                                        <td ><a href="#"><i class="fas fa-trash"></i></a></td>
-                                        <td ><a href="/admin/directory/edit/{{$dt->id}}"><i class="fas fa-edit"></i></a></td>
+                                        <td ><a href="/admin/user/delete/{{$dt->id}}"><i class="fas fa-trash"></i></a></td>
+                                        <td ><a href="#"><i class="fas fa-edit"></i></a></td>
                                 </tr>
                                 @endforeach
                         </table>

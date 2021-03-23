@@ -29,7 +29,7 @@
                         </div>
                         
                 @if(count($errors)>0)   
-                          <div class="alert">
+                          <div class="mesage">
                               @foreach($errors->all() as $err)
                                   {{ $err }}<br>
                               @endforeach
@@ -37,7 +37,7 @@
                 @endif
                      
                 @if(session('message'))
-                          <div class="alert">
+                          <div class="mesage">
                               {{ session('message') }}
                           </div>
                 @endif

@@ -62,16 +62,15 @@ class ProfileController extends Controller
     public function updateprofile(Request $request, $id)
     {
         $data = $request->validate([
-            'avatar' => 'bail|required|image',
+            'avatar' => 'bail|image',
             'name'=>'bail|required|min:2|max:25',
             'address'=>'bail|required|min:5|max:50',
-            'phone'=>'bail|required|alpha_num|digits:9,10',
+            'phone'=>'bail|required|alpha_num|digits:10',
             'date_of_birth'=>'bail|required|date_format:d/m/Y',
             'gender'=>'bail|required|in:Nam,Nữ'
            
         ],
         [
-            'avatar.required'=>'Ảnh không được để trống',
             'avatar.image'=>'Chỉ được chọn ảnh file đuôi jpg ,jpeg, png, bmp, gif, or svg ..',
             'name.required'=>'Tên không được để trống',
             'name.min'=>'Tên ít nhất 2 ký tự',
@@ -81,7 +80,7 @@ class ProfileController extends Controller
             'address.max'=>'Địa chỉ tối đa 50 ký tự',
             'phone.required'=>'SĐT không được để trống',
             'phone.alpha_num'=>'SĐT chỉ chấp nhận số',
-            'phone.digits'=>'SĐT chỉ chấp nhận số trong khoảng 9 và 10',
+            'phone.digits'=>'SĐT chỉ chấp nhận 10 số',
             'date_of_birth.required'=>'Ngày sinh không được để trống',
             'date_of_birth.date_format'=>'Ngày sinh phải đúng định dạng ngày/tháng/năm(##/##/####)',
             'gender.required'=>'Giới tính không được để trống',
@@ -126,10 +125,23 @@ class ProfileController extends Controller
     public function postpost(Request $request)
     {
         $data = $request->validate([
-            'avatar' => 'bail|required|image',
-            
-            ]);
- 
+            'title' =>  'bail|required|min:10|max:60',
+            'content'=> 'bail|required|min:20|max:1500',
+           // 'file' =>   'bail|required|image',
+            'price' =>  'bail|required|integer',
+        ],
+        [
+            'title.required' => 'Tiêu đề không được bỏ trống',
+            'title.min' => 'Tiêu đề ít nhất 10 ký tự',
+            'title.max' => 'Tiêu đề  tối đa 60 ký tự',
+            'content.required' => 'Mô tả không được bỏ trống',
+            'content.min' => 'Mô tả ít nhất 20 ký tự',
+            'content.max' => 'Mô tả tối đa 1500 ký tự',
+            'file.required' =>   'Ảnh không được bỏ trống',
+            'price.required' =>'Giá không được để trống',
+            'price.integer' =>'Giá phải là số nguyên'
+        ]
+        );
         $post = new Post;
          $post->directory_id = $request->tendm;
          $post->user_id  = Auth::id();

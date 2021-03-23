@@ -245,7 +245,7 @@ float: right;
     width: 100%;
     margin: auto;
     display: block;
-    background-color: #f3f9fa;
+    background-color: #0395e9;
     float: left;
     margin-top: 20px;
     padding-bottom: 15px;
@@ -262,20 +262,20 @@ float: right;
 
 .colum-d3{
     width: 265px;
-    height: 300px;
+    min-height: 300px;
     float: left;
     margin: auto;
     margin-left: 11px;
     display: flex;
     flex-direction: column;
-    background-color: white;
-    border-radius: 5px;
+    background-color: rgb(253, 235, 235);
     margin-top:  20px;
-   
+    color: rgb(76, 103, 226);
+   border-radius: 10px;
 }
 .colum-d3 .image-d1{
-    width: 255px;
-    height: 220px;
+    width: 265px;
+    min-height: 220px;
    float: left;
    margin: auto;
 }
@@ -283,14 +283,14 @@ float: right;
     width: 255px;
     height: 65px;
     margin-bottom: 10px;
-    background-color: rgb(255, 250, 255);
     margin: auto;
     padding-top: 10px;
     padding-left: 10px;
 }
 .colum-d3 .image-d1 img{
-        width: 255px;
-        height: 220px;
+        width: 265px;
+        height: 270px;
+        border-radius: 5px;
 }
 .colum-d3 .image-d2 p{
     width: 100%;
@@ -304,7 +304,7 @@ float: right;
     width: 1000px;
     min-height: 1200px;
     margin: auto;
-    background-color: rgb(185, 184, 181);
+    background-color: rgb(228, 226, 222);
     padding-bottom: 50px;
     color: #3e77fa;
 }
@@ -352,9 +352,14 @@ float: right;
 .inp .asd{
     width: 300px;
 }
-.inp span{
+.inp b{
     font-size: 20px;
     margin-left: 10px;
+}
+.inp span{
+    min-width: 50%;
+    font-size: 20px;
+    color: rgb(204, 64, 8);
 }
 .tit .drt{
     width: 300px;
@@ -369,7 +374,8 @@ float: right;
     width: 500px;
     height: 50px;
     font-size: 30px;
-    background-color: seagreen;
+    color: rgb(25, 83, 243);
+    background-color: rgb(80, 228, 144);
 }
 /* thong tin ca  nhan */
 .profile{
@@ -575,6 +581,6 @@ nav ul li{
     width: 100%;
     height: 30px;
     font-size: 20px;
-    color: darkcyan;
-    background-color: rgb(233, 21, 21);
+    color: rgb(25, 63, 3);
+    background-color: rgb(16, 166, 236);
 }

@@ -13,8 +13,8 @@
                             <p>Tiêu đề</p>
                         </div>
                         <div class="inp">
-                            <input type="text" name="title" required>
-                            @error('avatar')
+                            <input type="text" name="title">
+                            @error('title')
                                     <span>
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -26,8 +26,8 @@
                             <p>Mô tả</p>
                         </div>
                         <div class="inp">
-                            <textarea name="content" required></textarea>
-                            @error('avatar')
+                            <textarea name="content" ></textarea>
+                            @error('content')
                                     <span>
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -36,12 +36,12 @@
                     </div>
                     <div class="tit"> 
                         @for( $i = 1 ; $i <= 3 ; $i++)
-                       <div class="txt">
+                    <div class="txt">
                             <p>Ảnh{!! $i !!}</p>
                         </div>
                         <div class="inp">
-                            <input type="file" name="file" required >
-                            @error('avatar')
+                            <input type="file" name="file[]" required >
+                            @error('file')
                                     <span>
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -55,8 +55,8 @@
                             <p>Giá</p>
                         </div>
                         <div class="inp">
-                            <input class="asd" type="text" name="price" required><span>VND</span>
-                            @error('avatar')
+                            <input class="asd" type="text" name="price" ><b>VND</b><br>
+                            @error('price')
                                     <span>
                                         <strong>{{ $message }}</strong>
                                     </span>

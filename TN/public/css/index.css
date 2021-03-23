@@ -302,9 +302,11 @@ float: right;
 /*trang Post*/
 .mid{
     width: 1000px;
-    height: 1200px;
+    min-height: 1200px;
     margin: auto;
-    background-color: rgb(250, 243, 231);
+    background-color: rgb(185, 184, 181);
+    padding-bottom: 50px;
+    color: #3e77fa;
 }
 .mid .mid-title{
     width: 1000px;
@@ -315,25 +317,27 @@ float: right;
     font-size: 30px;
 }
 .mid .mid-content{
-    height: 1050px;
+    min-height: 1050px;
     padding-top: 30px;
 }
 .mid .mid-content .mct-form{
-    height: 1050px;
+    min-height: 1050px;
     margin: auto;
     width: 960px;
 }
 .tit{
     width: 960px;
-    margin-bottom: 20px;
+   
 }
 .txt{
     width: 100%;
     font-size: 30px;
     margin-bottom: 5px;
+    margin-top: 15px;
 }
 .inp{
     width: 100%;
+    min-height: 60px;
 }
 .inp input{
     height: 40px;
@@ -564,7 +568,8 @@ nav ul li{
 }
 .edit .abc span{
     min-width: 50%;
-    color: crimson;
+    font-size: 20px;
+    color: rgb(101, 241, 76);
 }
 .mesage{
     width: 100%;

@@ -92,7 +92,7 @@ class AdminController extends Controller
     public function updatedirectory(Request $request, $id)
     {
         $data = $request->validate([
-            'tendm' => 'bail|required|alpha|min:3|max:25',
+            'tendm' => 'bail|required|alpha|unique:directories|min:3|max:25',
             'loaidm' => 'required',
         ],
         [

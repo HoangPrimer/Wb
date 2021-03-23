@@ -62,9 +62,32 @@ class ProfileController extends Controller
     public function updateprofile(Request $request, $id)
     {
         $data = $request->validate([
-            'avatar' => 'bail|image',
+            'avatar' => 'bail|required|image',
+            'name'=>'bail|required|min:2|max:25',
+            'address'=>'bail|required|min:5|max:50',
+            'phone'=>'bail|required|alpha_num|digits:9,10',
+            'date_of_birth'=>'bail|required|date_format:d/m/Y',
+            'gender'=>'bail|required|in:Nam,Nữ'
            
         ],
+        [
+            'avatar.required'=>'Ảnh không được để trống',
+            'avatar.image'=>'Chỉ được chọn ảnh file đuôi jpg ,jpeg, png, bmp, gif, or svg ..',
+            'name.required'=>'Tên không được để trống',
+            'name.min'=>'Tên ít nhất 2 ký tự',
+            'name.max'=>'Tên tối đa 25 ký tự',
+            'address.required'=>'Địa chỉ không được để trống',
+            'address.min'=>'Địa chỉ ít nhất 5 ký tự',
+            'address.max'=>'Địa chỉ tối đa 50 ký tự',
+            'phone.required'=>'SĐT không được để trống',
+            'phone.alpha_num'=>'SĐT chỉ chấp nhận số',
+            'phone.digits'=>'SĐT chỉ chấp nhận số trong khoảng 9 và 10',
+            'date_of_birth.required'=>'Ngày sinh không được để trống',
+            'date_of_birth.date_format'=>'Ngày sinh phải đúng định dạng ngày/tháng/năm(##/##/####)',
+            'gender.required'=>'Giới tính không được để trống',
+            'gender.in'=>'Giới tính chỉ Nam hoặc Nữ'
+
+        ]
         
     );
         $update = User::find($id);
@@ -102,7 +125,12 @@ class ProfileController extends Controller
     }
     public function postpost(Request $request)
     {
-          $post = new Post;
+        $data = $request->validate([
+            'avatar' => 'bail|required|image',
+            
+            ]);
+ 
+        $post = new Post;
          $post->directory_id = $request->tendm;
          $post->user_id  = Auth::id();
          $post->name_post = $request->title;

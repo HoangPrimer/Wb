@@ -14,6 +14,11 @@
                         </div>
                         <div class="inp">
                             <input type="text" name="title" required>
+                            @error('avatar')
+                                    <span>
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                             @enderror
                         </div>
                     </div>
                     <div class="tit"> 
@@ -22,6 +27,11 @@
                         </div>
                         <div class="inp">
                             <textarea name="content" required></textarea>
+                            @error('avatar')
+                                    <span>
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
                         </div>
                     </div>
                     <div class="tit"> 
@@ -29,8 +39,13 @@
                        <div class="txt">
                             <p>Ảnh{!! $i !!}</p>
                         </div>
-                        <div class="">
-                            <input type="file" name="file[]" required >
+                        <div class="inp">
+                            <input type="file" name="file" required >
+                            @error('avatar')
+                                    <span>
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
                         </div>
                         @endfor
                      </div>
@@ -41,6 +56,11 @@
                         </div>
                         <div class="inp">
                             <input class="asd" type="text" name="price" required><span>VND</span>
+                            @error('avatar')
+                                    <span>
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
                         </div>
                      </div>
                      <div class="tit"> 

@@ -12,10 +12,10 @@
          <form action="{{ route('updateprofile', ['id'=> $pro->id])}}" method="post" enctype="multipart/form-data">
              @csrf
          <div class="edit">
-                <label for="Name">Avatar : </label>
+                <label for="Avatar">Avatar : </label>
                 <div class="abc">
                         <input type="file" name="avatar" >
-                        @error('name')
+                        @error('avatar')
                                     <span>
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -50,7 +50,7 @@
                 <label for="Name">SĐT : </label>
                 <div class="abc">
                         <input type="text" name="phone" value=" {{$pro->phone}}">
-                        @error('address')
+                        @error('phone')
                                     <span >
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -62,7 +62,7 @@
                 <label for="Name">Giới tính  : </label>
                 <div class="abc">
                          <input type="text" name="gender" value=" {{$pro->gender}}">
-                         @error('address')
+                         @error('gender')
                                     <span >
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -74,7 +74,7 @@
                 <label for="Name">Ngày sinh : </label>
                 <div class="abc">
                          <input type="text" name="date_of_birth" value=" {{$pro->date_of_birth}}">
-                          @error('address')
+                          @error('date_of_birth')
                                     <span >
                                         <strong>{{ $message }}</strong>
                                     </span>
